@@ -1,0 +1,14 @@
+#deny from all
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?yannickmathey\.com$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?yannickmathey\.com/.*$ [NC]
+ReWriteRule .*\.(woff|eot|ttf|svg)$ - [L,F]
+Options -Indexes
+#
+#supprimer les erreurs de MIME dans la console :
+AddType font/ttf .ttf
+AddType font/eot .eot
+AddType font/otf .otf
+AddType font/woff .woff
+#

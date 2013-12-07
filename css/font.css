@@ -1,0 +1,412 @@
+@font-face{
+	font-family : "Panorama ExtraCondensed-Thin";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-Thin.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-Thin.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-Thin.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-Thin-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-ExtraLight";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-ExtraLight.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-ExtraLight.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-ExtraLight.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-ExtraLight-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-Light";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-Light.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-Light.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-Light.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-Light-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-Regular";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-Regular.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-Regular.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-Regular.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-Regular-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-SemiBold";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-SemiBold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-SemiBold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-SemiBold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-SemiBold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-Bold";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-Bold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-Bold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-Bold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-Bold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-Black";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-Black.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-Black.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-Black.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-Black-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraCondensed-Ultra";
+	src : url("../fonts/EOT/Panorama-ExtraCondensed-Ultra.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraCondensed-Ultra.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraCondensed-Ultra.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraCondensed-Ultra-autohinted.ttf") format("truetype");
+}
+
+
+
+
+@font-face{
+	font-family : "Panorama SemiCondensed-Thin";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-Thin.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-Thin.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-Thin.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-Thin-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-ExtraLight";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-ExtraLight.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-ExtraLight.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-ExtraLight.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-ExtraLight-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-Light";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-Light.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-Light.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-Light.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-Light-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-Regular";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-Regular.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-Regular.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-Regular.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-Regular-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-SemiBold";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-SemiBold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-SemiBold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-SemiBold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-SemiBold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-Bold";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-Bold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-Bold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-Bold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-Bold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-Black";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-Black.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-Black.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-Black.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-Black-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiCondensed-Ultra";
+	src : url("../fonts/EOT/Panorama-SemiCondensed-Ultra.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiCondensed-Ultra.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiCondensed-Ultra.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiCondensed-Ultra-autohinted.ttf") format("truetype");
+}
+
+
+
+
+@font-face{
+	font-family : "Panorama Condensed-Thin";
+	src : url("../fonts/EOT/Panorama-Condensed-Thin.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-Thin.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-Thin.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-Thin-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-ExtraLight";
+	src : url("../fonts/EOT/Panorama-Condensed-ExtraLight.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-ExtraLight.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-ExtraLight.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-ExtraLight-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-Light";
+	src : url("../fonts/EOT/Panorama-Condensed-Light.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-Light.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-Light.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-Light-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-Regular";
+	src : url("../fonts/EOT/Panorama-Condensed-Regular.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-Regular.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-Regular.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-Regular-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-SemiBold";
+	src : url("../fonts/EOT/Panorama-Condensed-SemiBold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-SemiBold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-SemiBold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-SemiBold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-Bold";
+	src : url("../fonts/EOT/Panorama-Condensed-Bold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-Bold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-Bold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-Bold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-Black";
+	src : url("../fonts/EOT/Panorama-Condensed-Black.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-Black.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-Black.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-Black-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Condensed-Ultra";
+	src : url("../fonts/EOT/Panorama-Condensed-Ultra.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Condensed-Ultra.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Condensed-Ultra.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Condensed-Ultra-autohinted.ttf") format("truetype");
+}
+
+
+
+
+@font-face{
+	font-family : "Panorama Thin";
+	src : url("../fonts/EOT/Panorama-Thin.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Thin.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Thin.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Thin-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraLight";
+	src : url("../fonts/EOT/Panorama-ExtraLight.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraLight.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraLight.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraLight-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Light";
+	src : url("../fonts/EOT/Panorama-Light.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Light.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Light.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Light-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Regular";
+	src : url("../fonts/EOT/Panorama-Regular.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Regular.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Regular.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Regular-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama SemiBold";
+	src : url("../fonts/EOT/Panorama-SemiBold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-SemiBold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-SemiBold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-SemiBold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Bold";
+	src : url("../fonts/EOT/Panorama-Bold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Bold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Bold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Bold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Black";
+	src : url("../fonts/EOT/Panorama-Black.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Black.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Black.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Black-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Ultra";
+	src : url("../fonts/EOT/Panorama-Ultra.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Ultra.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Ultra.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Ultra-autohinted.ttf") format("truetype");
+}
+
+
+
+
+@font-face{
+	font-family : "Panorama Wide-Thin";
+	src : url("../fonts/EOT/Panorama-Wide-Thin.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-Thin.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-Thin.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-Thin-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-ExtraLight";
+	src : url("../fonts/EOT/Panorama-Wide-ExtraLight.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-ExtraLight.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-ExtraLight.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-ExtraLight-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-Light";
+	src : url("../fonts/EOT/Panorama-Wide-Light.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-Light.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-Light.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-Light-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-Regular";
+	src : url("../fonts/EOT/Panorama-Wide-Regular.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-Regular.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-Regular.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-Regular-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-SemiBold";
+	src : url("../fonts/EOT/Panorama-Wide-SemiBold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-SemiBold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-SemiBold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-SemiBold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-Bold";
+	src : url("../fonts/EOT/Panorama-Wide-Bold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-Bold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-Bold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-Bold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-Black";
+	src : url("../fonts/EOT/Panorama-Wide-Black.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-Black.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-Black.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-Black-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama Wide-Ultra";
+	src : url("../fonts/EOT/Panorama-Wide-Ultra.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-Wide-Ultra.woff") format("woff"),
+	url("../fonts/SVG/Panorama-Wide-Ultra.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-Wide-Ultra-autohinted.ttf") format("truetype");
+}
+
+
+
+
+@font-face{
+	font-family : "Panorama ExtraExtended-Thin";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-Thin.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-Thin.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-Thin.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-Thin-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-ExtraLight";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-ExtraLight.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-ExtraLight.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-ExtraLight.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-ExtraLight-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-Light";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-Light.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-Light.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-Light.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-Light-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-Regular";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-Regular.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-Regular.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-Regular.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-Regular-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-SemiBold";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-SemiBold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-SemiBold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-SemiBold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-SemiBold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-Bold";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-Bold.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-Bold.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-Bold.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-Bold-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-Black";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-Black.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-Black.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-Black.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-Black-autohinted.ttf") format("truetype");
+}
+@font-face{
+	font-family : "Panorama ExtraExtended-Ultra";
+	src : url("../fonts/EOT/Panorama-ExtraExtended-Ultra.eot?") format("eot"),
+	url("../fonts/WOFF/Panorama-ExtraExtended-Ultra.woff") format("woff"),
+	url("../fonts/SVG/Panorama-ExtraExtended-Ultra.svg#abcd") format("svg"),
+	url("../fonts/TTF/Panorama-ExtraExtended-Ultra-autohinted.ttf") format("truetype");
+}
+
+
+.C1G1{ font-family: "Panorama ExtraCondensed-Thin", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#3F89DB; } 
+.C1G2{ font-family: "Panorama ExtraCondensed-ExtraLight", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5076BE; } 
+.C1G3{ font-family: "Panorama ExtraCondensed-Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5E679D; } 
+.C1G4{ font-family: "Panorama ExtraCondensed-Regular", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#70578D; } 
+.C1G5{ font-family: "Panorama ExtraCondensed-SemiBold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#824774; } 
+.C1G6{ font-family: "Panorama ExtraCondensed-Bold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#97365B; } 
+.C1G7{ font-family: "Panorama ExtraCondensed-Black", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#AC2544; } 
+.C1G8{ font-family: "Panorama ExtraCondensed-Ultra", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#C1142F; } 
+
+.C2G1{ font-family: "Panorama SemiCondensed-Thin", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#4682D0; } 
+.C2G2{ font-family: "Panorama SemiCondensed-ExtraLight", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5571B5; } 
+.C2G3{ font-family: "Panorama SemiCondensed-Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#665F9A; } 
+.C2G4{ font-family: "Panorama SemiCondensed-Regular", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#775082; } 
+.C2G5{ font-family: "Panorama SemiCondensed-SemiBold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#8A3669; } 
+.C2G6{ font-family: "Panorama SemiCondensed-Bold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#9F3052; } 
+.C2G7{ font-family: "Panorama SemiCondensed-Black", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#B1223E; } 
+.C2G8{ font-family: "Panorama SemiCondensed-Ultra", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#CA0C28; } 
+
+.C3G1{ font-family: "Panorama Condensed-Thin", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#497DC8; } 
+.C3G2{ font-family: "Panorama Condensed-ExtraLight", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5B6AA9; } 
+.C3G3{ font-family: "Panorama Condensed-Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#6D5990; } 
+.C3G4{ font-family: "Panorama Condensed-Regular", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#804976; } 
+.C3G5{ font-family: "Panorama Condensed-SemiBold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#94395D; } 
+.C3G6{ font-family: "Panorama Condensed-Bold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#A82A48; } 
+.C3G7{ font-family: "Panorama Condensed-Black", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#BA1B36; } 
+.C3G8{ font-family: "Panorama Condensed-Ultra", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#D20021; } 
+
+.C4G1{ font-family: "Panorama Thin", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5075BC; } 
+.C4G2{ font-family: "Panorama ExtraLight", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#65619C; } 
+.C4G3{ font-family: "Panorama Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#765184; } 
+.C4G4{ font-family: "Panorama Regular", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#87446E; } 
+.C4G5{ font-family: "Panorama SemiBold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#9A3457; } 
+.C4G6{ font-family: "Panorama Bold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#B12134; } 
+.C4G7{ font-family: "Panorama Black", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#C60F2B; } 
+.C4G8{ font-family: "Panorama Ultra", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#D9001C; } 
+
+.C5G1{ font-family: "Panorama Wide-Thin", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5C6BAA; } 
+.C5G2{ font-family: "Panorama Wide-ExtraLight", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#6A5D95; } 
+.C5G3{ font-family: "Panorama Wide-Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#7C4C7B; } 
+.C5G4{ font-family: "Panorama Wide-Regular", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#8F3D64; } 
+.C5G5{ font-family: "Panorama Wide-SemiBold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#A02F50; } 
+.C5G6{ font-family: "Panorama Wide-Bold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#B42037; } 
+.C5G7{ font-family: "Panorama Wide-Black", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#CE0324; } 
+.C5G8{ font-family: "Panorama Wide-Ultra", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#E30015; } 
+
+.C6G1{ font-family: "Panorama ExtraExtended-Thin", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#5E66A4; } 
+.C6G2{ font-family: "Panorama ExtraExtended-ExtraLight", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#71558A; } 
+.C6G3{ font-family: "Panorama ExtraExtended-Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#864570; } 
+.C6G4{ font-family: "Panorama ExtraExtended-Regular", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#95365B; } 
+.C6G5{ font-family: "Panorama ExtraExtended-SemiBold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#AC2544; } 
+.C6G6{ font-family: "Panorama ExtraExtended-Bold", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#B61E3A; } 
+.C6G7{ font-family: "Panorama ExtraExtended-Black", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#D7001D; } 
+.C6G8{ font-family: "Panorama ExtraExtended-Ultra", sans-serif; font-weight:normal; font-style:normal; font-variant:normal; color:#EE000E; } 
+

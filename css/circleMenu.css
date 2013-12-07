@@ -1,0 +1,130 @@
+#repereCentre {
+	display: none;
+}
+
+ul, li {
+	list-style:none;
+	padding:0;
+	margin:0;
+	min-width:10px;
+	pointer-events:all;
+}
+
+li { text-align:center; line-height:1em; }
+
+#circleMenu {
+	position: relative;
+	width: 50%;
+	float: right;
+	height:80%;
+	margin-right: 20%;
+}
+
+#repere {
+	position:absolute;
+	text-align: right;
+	top: 40px;
+	bottom: 40px;
+	width: 20%;
+}
+#repere p {
+	text-align:right;
+	float: right;
+}
+#repere span {
+	vertical-align:middle;
+	display:inline-block;
+	text-align:right;
+	font-size: 1.4em;
+	padding-bottom: 15px;
+}
+#repere p:after {
+	content: url('../img/repere.png');
+	margin-left: 20px;
+}
+
+
+#circle_0 {
+	position:absolute;
+	width:56%;
+	z-index:30;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:99%;
+}
+
+#circle_1 {
+	position:absolute;
+	width:85%;
+	z-index:20;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:99%;
+}
+
+#circle_2 {
+	position:absolute;
+	width:100%;
+	z-index:10;
+}
+
+
+.circleMenu li {
+	position:absolute;
+	cursor:pointer;
+}
+
+.recepteurGlyphe {
+	font-size:400%;
+}
+
+.legende { 
+	font-size: 16px;
+	position: absolute;
+}
+
+#resultat {
+	position:relative;
+	font-size:1000%;
+	z-index:500;
+	width: 30%;
+	text-align: center;
+	background-color: #0e0c0e;
+	height: 30%;
+	border-radius: 50%;
+	line-height: 30%;
+	margin: 0 auto;
+	/*display:none;*/
+}
+
+
+.afficheGlyphe {
+	position:absolute;
+	color:gold;
+	font-size:10px;
+	letter-spacing:0.2em;
+	top:20%;
+	right:-20px;
+	display:block;
+	font-family: Monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace;
+	display:none;
+}
+
+.selection_glyph:hover {
+	margin-top: -25px;
+	font-size: 50px;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 300ms;
+	-moz-transition-property: all;
+	-moz-transition-duration: 300ms;
+	transition-property: all;
+	transition-duration: 300ms;
+}
+
+.bg-svg {
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
