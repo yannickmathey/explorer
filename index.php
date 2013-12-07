@@ -28,7 +28,7 @@
 
 </head>
 
-<body>d
+<body>
 
 
 <div id="wrap">
