@@ -31,6 +31,25 @@ html {
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
 
+body.home {
+    background-color: #1a1a1a;
+}
+
+body.home path {
+    opacity: 0;
+    -webkit-transition: all 500ms ease-out;
+}
+body.home:hover path {
+    opacity: 1;
+    -webkit-transition: all 900ms ease-out;
+}
+
+.enter:hover .explore {
+    fill: red;
+    cursor: pointer;
+    -webkit-transition: all 900ms ease-out;
+}
+
 body {
     margin: 0;
     padding: 0;
