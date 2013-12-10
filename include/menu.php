@@ -1,7 +1,6 @@
 <div id="menu_lateral">
 
-    <div id="logo">
-    </div>
+    <a href="./"><div id="logo"></div></a>
 
     <div id="menu">
     	<ul id="menu1">
