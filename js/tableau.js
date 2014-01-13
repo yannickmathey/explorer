@@ -1,7 +1,7 @@
 function parcourirTableau(cible) {
 
 
-    var styleCaractere = function(classe, nom, pack, italique) {
+    styleCaractere = function(classe, nom, pack, italique) {
         this.classe = classe;
         this.nom = nom;
         this.pack = pack;
@@ -9,7 +9,7 @@ function parcourirTableau(cible) {
     };
 
 
-    var tableau = [  
+    window.tableau = [  
 
         new styleCaractere("C1G1", "Panorama ExtraCondensed-Thin", "Panorama ExtraCondensed", "Panorama ExtraCondensed-ThinItalic"),
         new styleCaractere("C1G2", "Panorama ExtraCondensed-ExtraLight", "Panorama ExtraCondensed", "Panorama ExtraCondensed-ExtraLightItalic"),
@@ -88,7 +88,7 @@ function parcourirTableau(cible) {
     Array.prototype.inArray = utils.inArray;
 
     var i = tableau.inArray(cible,  "classe");
-    console.log(tableau[i].nom);
+    // console.log(tableau[i].nom);
     return tableau[i].nom;
 
 };

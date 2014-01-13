@@ -5,7 +5,7 @@ $(document).ready(function () {
         var hauteur = $(this).height();
         var position = $(this).offset();
 
-        console.log(id + " : " + largeur + " / " + hauteur + " x : " + position.left + " y : " + position.top);
+       // console.log(id + " : " + largeur + " / " + hauteur + " x : " + position.left + " y : " + position.top);
         
         $(this).append($('<div id="repereCentre">.</div>'));
         $('#repereCentre').css({

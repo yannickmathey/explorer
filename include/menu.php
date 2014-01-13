@@ -8,7 +8,7 @@
             <li id="btnLiveTest">Live Test</li>
         </ul>
         <ul id="menu2">
-        	<a href="#" onclick="switchSlant()"><li>Switch slant</li></a>
+        	<a href="#" class="toggleItalic"><li>Switch slant</li></a>
             <li><a href="#">Review collection</a></li>
         </ul>
         <div  id="menu3">

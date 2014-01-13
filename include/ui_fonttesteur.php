@@ -14,8 +14,8 @@
 				min: 0,
 				slide: function(event, ui) {
 //currentValue.html(ui.value);
-$("#testeur textarea").css("font-size", value);
-$("#testeur textarea").css("line-height", interlignage(value) + "px" );
+$("#testeur:last-child").css("font-size", value);
+$("#testeur:last-child").css("line-height", interlignage(value) + "px" );
 console.log(value);
 }
 });
@@ -26,7 +26,7 @@ console.log(value);
 	</div>
 
 	<div class="btn-2">
-		<span onclick="switchSlant()">Switch slant</span>
+		<span class="toggleItalic">Switch slant</span>
 	</div>
 </div>
 
@@ -100,7 +100,7 @@ console.log(value);
 					sliderCoordinate, pickerCoordinate
 					);
 
-				$("#testeur textarea").css('color', hex);
+				$("[data-focus=true]").css('color', hex);
 				$("#btn-font").css('border-left-color', hex);
 
 			});

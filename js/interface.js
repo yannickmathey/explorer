@@ -43,7 +43,7 @@ function displayScreen() {
 
 		if ( ($target).is('#btnLiveTest') ) {
 			glissementMenu();
-			
+
 			$('#conteneurNavigator').fadeOut('fast',
 				function() {
 					$('#conteneurLiveTest').fadeIn(900);
@@ -58,7 +58,7 @@ function displayScreen() {
 
 		else {
 			glissementMenu();
-			
+
 			$('#conteneurLiveTest').fadeOut('fast',
 				function() {
 					$('#conteneurNavigator').fadeIn(900);
@@ -134,10 +134,12 @@ $("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li c
 
 };
 
-function switchSlant() {
+$(document).on("click", ".toggleItalic", function(e) {
 	$("span.conteneur").toggleClass("italic");
 	$("#resultat").toggleClass("italic");
-};
+	$('[data-focus=true] > span').toggleClass("italic");
+});
+
 
 function define_color() {
 	$('.btn-color span').on('click', function(){
@@ -242,6 +244,7 @@ function moveCaretToEnd(el) {
 }
 
 function CaretFinTexte() {
+	/*
 	var textarea = document.getElementById("testeurTextarea");
 	textarea.onfocus = function() {
 		moveCaretToEnd(textarea);
@@ -251,6 +254,7 @@ function CaretFinTexte() {
 	    	moveCaretToEnd(textarea);
 	    }, 1);
 	};
+	*/
 }
 
 
@@ -265,8 +269,8 @@ function classONmenu3() {
 function Corps() {
 
 
-	$("#testeur textarea").css("font-size", corps);
-	$("#testeur textarea").css("line-height", interlignage(corps) + "px" );
+	$('[data-focus=true]').css("font-size", corps);
+	$('[data-focus=true]').css("line-height", interlignage(corps) + "px" );
 
 
 	$(function(){
@@ -276,9 +280,9 @@ function Corps() {
 		$('#defaultSlider').change(function(){
 			var corps = this.value;
 			currentValue.html(this.value);
-			$("#testeur textarea").css("font-size", corps + "px" );
-			$("#testeur textarea").css("line-height", interlignage(corps) + "px" );
-			console.log(corps);
+			$('[data-focus=true]').css("font-size", corps + "px" );
+			$('[data-focus=true]').css("line-height", interlignage(corps) + "px" );
+			//console.log(corps);
 		});
 
 		$('#defaultSlider').change();
@@ -307,11 +311,94 @@ function Corps() {
 		return interlignage;
 	}
 
-
-
-
-
 };
+
+
+// changer le style au clic du menu3
+$(function() {
+
+	$("#menu3 li").on('click',function() {
+		codeFocus = $(this).attr("class");
+		$('[data-focus=true]').fadeOut('slow', function() {
+			$('[data-focus=true]').removeAttr('class');
+			$('[data-focus=true]').addClass('testeurTextarea ' + codeFocus);
+			$("[data-focus=true]").attr('title', parcourirTableau(codeFocus));
+			var currentContent = $('[data-focus=true] > span').html();
+			var currentTitle = $('[data-focus=true]').attr('title');
+
+			console.log(
+				'currentContent = ' + currentContent
+				+ ' & ' +
+				'currentTitle = ' + currentTitle
+				);
+
+			// Si le text a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
+			tableau.filter(function (person) { 
+				if (person.nom == currentContent) {
+					$('[data-focus=true] > span').empty().append(parcourirTableau(codeFocus));
+					return person.nom == currentContent;
+				}
+			 });
+
+
+			$('[data-focus=true]').fadeIn('slow');
+			return codeFocus;
+		});
+
+	});
+
+});
+
+// Ajouter styles dans textarea testeur
+$(function(){
+	$('#testeur').find('#addLine').each(function() {
+		$("#addLine").on('click', function() {
+			var button = $('#addLine');
+			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
+			//var font = parcourirTableau(codeFocus);
+			var newTextarea = '<div class="line clearfix"><div class="options"><button class="delete">&#10005;</button></div><div contenteditable="true" data-focus="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea" style="color: white;"><span>Panorama Regular</span></div></div>'
+			$('#testeur').append(newTextarea);
+
+			button.appendTo("#testeur:last-child")
+		});
+	});
+});
+
+//donner le focus au textarea séléctionné
+$(function(){
+	$(document).on("click", "[name=testeurTextarea]", function(e) {
+		$('[name=testeurTextarea]').attr('data-focus', 'false');
+		$(this).attr('data-focus', 'true');
+	})
+});
+
+
+// supprimer la ligne du testeur
+$(function(){
+	$(document).on("click", ".delete", function(e) {
+		$(this).closest('.line').slideUp('slow', function(){
+			$(this).closest('.line').remove();
+		});
+		
+	})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

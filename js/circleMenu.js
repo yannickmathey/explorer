@@ -49,7 +49,7 @@ function tracer(){
 			'margin-top': '' + marginTopConteneur + 'px',
 			height: tailleConteneur,
 		});
-		console.log(marginTopConteneur);
+		//console.log(marginTopConteneur);
 	});
 
 
@@ -81,9 +81,9 @@ function tracer(){
 		$("#resultat span").css({
 			'line-height': hauteurResultat + 'px',
 		});
-		console.log('largeurConteneur :' + largeurConteneur);
-		console.log('hauteurResultat :' + hauteurResultat);
-		console.log('postTop :' + postTop);
+		// console.log('largeurConteneur :' + largeurConteneur);
+		// console.log('hauteurResultat :' + hauteurResultat);
+		// console.log('postTop :' + postTop);
 
 		// Poisitionner légendes
 		$(".legende_0").css({
@@ -173,7 +173,7 @@ function rotation(id, angleDegres, nombreItems) {
 		});
 
 	});
-	console.log("----");
+	//console.log("----");
 };
 
 
@@ -205,11 +205,11 @@ $(function() {
 		$("#testeur").attr("class", codeFocus );
 		$("#debug span#codeChasse").empty().append(codeChasse);
 		$("#debug span#codeFocus").empty().append(codeFocus);
-		$("#testeur textarea").removeAttr('class');
-		$("#testeur textarea").attr('class', codeFocus);
+		//$('[data-focus=true]').removeAttr('class');
+		//$('[data-focus=true]').attr('class', codeFocus);
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");
 		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
-		$("#testeur textarea").empty().append(parcourirTableau(codeFocus) + " ");
+		$('[data-focus=true]').empty().append(parcourirTableau(codeFocus) + " ");
 		//changer class du li cliqué
 		$(this).removeAttr('class');
 		$(this).attr('class', codeFocus);
@@ -227,37 +227,17 @@ $(function() {
 		$("#testeur").attr("class", codeFocus );
 		$("#debug span#codeGraisse").empty().append(codeGraisse);
 		$("#debug span#codeFocus").empty().append(codeFocus);
-		$("#testeur textarea").removeAttr('class');
-		$("#testeur textarea").attr('class', codeFocus);
+		//$('[data-focus=true]').removeAttr('class');
+		//$('[data-focus=true]').attr('class', codeFocus);
 		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");		
-		$("#testeur textarea").empty().append(parcourirTableau(codeFocus) + " ");
+		$('[data-focus=true]').empty().append(parcourirTableau(codeFocus) + " ");
 		//changer class du li cliqué
 		$(this).removeAttr('class');
 		$(this).attr('class', codeFocus);
 	});
 
-	// changer le style au clic du menu3
-	$("#menu3 li").click(function() {
-		codeFocus = $(this).attr("class");
-		$("#testeur ").fadeOut('slow', function() {
-			$("#testeur textarea").removeAttr('class');
-			$("#testeur textarea").attr('class', codeFocus);
-			$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");
-			$("#testeur textarea").empty().append(parcourirTableau(codeFocus) + " ");
-			$("#conteneurGlyphes").removeAttr('class');
-			$("#conteneurGlyphes").attr('class', codeFocus);
-			$("#testeur").fadeIn('slow');
-		});
-		
-	});
-
 });
-
-// créer une fonction qui détermine si le texte area a déjà été modifié, 
-// si c'est le cas, ne pas écraser le texte tapé par l'utilisateur
-
-
 
 
 
