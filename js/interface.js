@@ -13,6 +13,7 @@ $(document).ready(function () {
 	setTimeout(function() {
 		$('#rideau').fadeOut();
 	}, 1000);
+	toggleItalic();
 });
 
 
@@ -134,12 +135,13 @@ $("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li c
 
 };
 
-$(document).on("click", ".toggleItalic", function(e) {
-	$("span.conteneur").toggleClass("italic");
-	$("#resultat").toggleClass("italic");
-	$('[data-focus=true] > span').toggleClass("italic");
-});
-
+function toggleItalic() {
+	$(document).on("click", ".toggleItalic", function(e) {
+		$("span.conteneur").toggleClass("italic");
+		$("#resultat").toggleClass("italic");
+		$('[data-focus=true] > span').toggleClass("italic");
+	});
+}
 
 function define_color() {
 	$('.btn-color span').on('click', function(){
@@ -338,7 +340,7 @@ $(function() {
 					$('[data-focus=true] > span').empty().append(parcourirTableau(codeFocus));
 					return person.nom == currentContent;
 				}
-			 });
+			});
 
 
 			$('[data-focus=true]').fadeIn('slow');
