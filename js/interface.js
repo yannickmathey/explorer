@@ -88,9 +88,10 @@ function nombreItemPanier() {
 	}
 };
 
-$(function listeAjouter() {
-	$(".listeAjouter").click(function() {
-		var content = $("#resultat").attr("class");
+$(function(){
+	$(document).on("click", ".listeAjouter", function(e) {
+		var content = $(this).attr("data-font");
+		console.log(">>" + $(this).attr("data-font"));
 		var panier = {};
 		panier[''] = content;
 
@@ -295,19 +296,19 @@ function Corps() {
 
 	function interlignage(corps){
 
-		var rapportCorpsInterLignage = 1.4
+		var rapportCorpsInterLignage = 1.4;
 
-		/*
+		
 		if(corps<=40){
 			rapportCorpsInterLignage = 1.6;
 		}
 		if(corps>=140){
-			rapportCorpsInterLignage = 1;
+			rapportCorpsInterLignage = 1.2;
 		}
 		else {
 			rapportCorpsInterLignage = 1.4;
 		}
-		*/
+		
 
 		var interlignage = Math.floor(Math.round((corps * rapportCorpsInterLignage) * 100) / 100);
 		return interlignage;
@@ -322,10 +323,10 @@ $(function() {
 	$("#menu3 li").on('click',function() {
 		codeFocus = $(this).attr("class");
 		$('[data-focus=true]').fadeOut('slow', function() {
-			$('[data-focus=true]').removeAttr('class');
-			$('[data-focus=true]').addClass('testeurTextarea ' + codeFocus);
-			$("[data-focus=true]").attr('title', parcourirTableau(codeFocus));
-			var currentContent = $('[data-focus=true] > span').html();
+			$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
+			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
+			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
+			var currentContent = $('[name=testeurTextarea] > span').html();
 			var currentTitle = $('[data-focus=true]').attr('title');
 
 			console.log(
@@ -337,7 +338,7 @@ $(function() {
 			// Si le text a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
 			tableau.filter(function (person) { 
 				if (person.nom == currentContent) {
-					$('[data-focus=true] > span').empty().append(parcourirTableau(codeFocus));
+					$('[data-focus=true] > [name=testeurTextarea] > span').empty().append(parcourirTableau(codeFocus));
 					return person.nom == currentContent;
 				}
 			});
@@ -358,7 +359,7 @@ $(function(){
 			var button = $('#addLine');
 			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
 			//var font = parcourirTableau(codeFocus);
-			var newTextarea = '<div class="line clearfix"><div class="options"><button class="delete">&#10005;</button></div><div contenteditable="true" data-focus="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea" style="color: white;"><span>Panorama Regular</span></div></div>'
+			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><button class="delete">&#10005;</button><img class="listeAjouter" data-font="' + codeFocus + '" src="./img/panier.png" /></div><div contenteditable="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea" style="color: white;"><span>Panorama Regular</span></div></div>'
 			$('#testeur').append(newTextarea);
 
 			button.appendTo("#testeur:last-child")
@@ -368,8 +369,8 @@ $(function(){
 
 //donner le focus au textarea séléctionné
 $(function(){
-	$(document).on("click", "[name=testeurTextarea]", function(e) {
-		$('[name=testeurTextarea]').attr('data-focus', 'false');
+	$(document).on("click", ".line", function(e) {
+		$('.line').attr('data-focus', 'false');
 		$(this).attr('data-focus', 'true');
 	})
 });

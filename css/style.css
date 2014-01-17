@@ -115,9 +115,11 @@ a:visited {
     float: right;
     width: 85%;
     height:100%;
-    overflow: hidden;
 }
 
+#conteneurNavigator {
+    overflow: hidden;
+}
 
 
 #menu_lateral {
@@ -306,6 +308,9 @@ a:visited {
     opacity: 1;
 }
 
+#resultat span.conteneur {
+        line-height: 1 !important;
+}
 #resultat:hover span.conteneur {
     height: 0;
     opacity: 0;
@@ -351,7 +356,7 @@ a:visited {
     -moz-transition-property: background-color;
     -moz-transition-duration: 200ms;
     transition-property: background-color;
-    transition-duration: 200ms;  
+    transition-duration: 200ms;
 }
 
 #conteneurLiveTest {
@@ -360,6 +365,7 @@ a:visited {
     height: 100%;
     background-color: #0F0E0F;
     overflow-x: hidden;
+    padding-top: 140px;
 }
 
 
@@ -404,20 +410,12 @@ a:visited {
 #testeur {
     width:95%;
     height: 80%;
+    outline: none;
+    overflow: visible;
+    position: relative;
 }
 
-#testeur textarea {
-    border:none;
-    background-color:transparent;
-    width:100%;
-    color: white;
-    outline: none;
-    resize: none;
-    margin-left:50px;
-    text-rendering: optimizeLegibility;
-    overflow: auto !important;
-    height: 100%;
-}
+
 
 .hover_transition {
     -webkit-transition-property: background-color;
@@ -504,3 +502,67 @@ a:visited {
     position: absolute;
     border: 1px solid black;
 }
+
+.testeurTextarea {
+    position: relative;
+    left: 50px;
+    outline: 0px solid transparent;
+    font-size: 36px;
+    line-height: 1.4;
+    float: left;
+    width: 90%;
+}
+
+
+#addLine {
+    background-color: red;
+    padding: 10px 20px;
+    border: 0px;
+    color: white;
+    margin-top: 80px;
+    cursor: pointer;
+    margin-left: 100px;
+}
+#addLine:hover {
+    opacity: .9;
+}
+
+.line {
+    
+}
+
+.options {
+    opacity: 0;
+    float: left;
+    margin-left: 25px;
+    transition: all 500ms;
+    -webkit-transition: all 500ms; /* Safari */
+}
+
+.line:hover .options {
+    opacity: 0.3;
+}
+
+.line .options:hover {
+    opacity: 1;
+}
+
+.delete {
+    background-color: red;
+    height: 16px;
+    width: 16px;
+    line-height: 10px;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 8px;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 1px;
+}
+
+
+
+

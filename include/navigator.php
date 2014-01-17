@@ -36,8 +36,7 @@
             <?php include 'include/glyphes.php'; ?>
         </ul>
 
-        <div id="resultat" class="C4G4">
-            <span class="conteneur blanc">a</span>
+        <div id="resultat" data-font="addFont" class="C4G4">
             <div id="menuAjouter">
                 <img src="img/fleche.png" />
                 <p class="listeAjouter">Add to your collection</p>
@@ -47,6 +46,7 @@
                     <li>Add the both slant</li>
                 </ul>
             </div>
+            <span class="conteneur blanc">a</span>
         </div><!-- END #resultat -->
 
     </div><!-- END #circleMenu -->
