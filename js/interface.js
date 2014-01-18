@@ -1,4 +1,6 @@
 cart = [];
+fontColor = "#ffffff";
+codeFocus = "C4G4";
 
 
 
@@ -11,7 +13,6 @@ $(document).ready(function () {
 	var panier = {};
 	displayScreen();
 	CaretFinTexte();
-	classONmenu3();
 	Corps();
 	define_color();
 	setTimeout(function() {
@@ -91,6 +92,7 @@ function nombreItemPanier() {
 
 $(function(){
 	$(document).on("click", ".listeAjouter", function(e) {
+
 		var content = $(this).attr("data-font");
 
 		
@@ -259,19 +261,13 @@ function CaretFinTexte() {
 }
 
 
-// à faire (.on sur fonte utilisée)
-function classONmenu3() {
-
-}
-
-
 
 // changer le corps du testeur
 function Corps() {
 
 
-	$('[data-focus=true]').css("font-size", corps);
-	$('[data-focus=true]').css("line-height", interlignage(corps) + "px" );
+	$('[data-focus=true] > [name=testeurTextarea]').css("font-size", corps);
+	$('[data-focus=true] > [name=testeurTextarea]').css("line-height", interlignage(corps) + "px" );
 
 
 	$(function(){
@@ -281,8 +277,8 @@ function Corps() {
 		$('#defaultSlider').change(function(){
 			var corps = this.value;
 			currentValue.html(this.value);
-			$('[data-focus=true]').css("font-size", corps + "px" );
-			$('[data-focus=true]').css("line-height", interlignage(corps) + "px" );
+			$('[data-focus=true] > [name=testeurTextarea]').css("font-size", corps + "px" );
+			$('[data-focus=true] > [name=testeurTextarea]').css("line-height", interlignage(corps) + "px" );
 			//console.log(corps);
 		});
 
@@ -319,6 +315,10 @@ function Corps() {
 $(function() {
 
 	$("#menu3 li").on('click',function() {
+		
+		$("#menu3 li").attr('style', '');
+		$(this).css('color', 'white');
+
 		var currentContent = '';
 		var currentTitle = '';
 		codeFocus = $(this).attr("class");
@@ -371,7 +371,7 @@ $(function(){
 			var button = $('#addLine');
 			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
 			//var font = parcourirTableau(codeFocus);
-			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><button class="delete">&#10005;</button><img class="listeAjouter" data-font="' + codeFocus + '" src="./img/panier.png" /></div><div contenteditable="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea" style="color: white;"><span>Panorama Regular</span></div></div>'
+			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><button class="delete">&#10005;</button><img class="listeAjouter" data-font="' + codeFocus + '" src="./img/panier.png" /></div><div contenteditable="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
 			$('#testeur').append(newTextarea);
 
 			button.appendTo("#testeur:last-child")

@@ -191,6 +191,11 @@ a:visited {
     margin-bottom: 10px;
     font-size: 12px;
     padding:5px 0;
+    transition: color 300ms;
+    -webkit-transition: color 300ms; /* Safari */
+}
+#menu3 li:hover {
+    color: white;
 }
 
 #menu4 { display:none; }
@@ -274,6 +279,7 @@ a:visited {
     opacity: 0;
     -webkit-transition: all 500ms ease-out;
     font-family: "Panorama Light", sans-serif; font-weight:normal; font-style:normal; font-variant:normal;
+    z-index: 999999;
 }
 
 #menuAjouter h2 {
@@ -288,11 +294,13 @@ a:visited {
 
 #menuAjouter ul {
     display: block;
-    height: 0;
     margin-top: 15px;
     overflow: hidden;
-    opacity: 0;
     -webkit-transition: all 500ms ease-out;
+}
+
+.listeAjouter {
+    cursor: pointer;
 }
 
 #menuAjouter li {

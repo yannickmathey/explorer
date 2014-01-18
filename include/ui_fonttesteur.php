@@ -31,7 +31,7 @@ console.log(value);
 </div>
 
 <div id="btn-fond" class="btn-2 btn-left btn-color">
-	<span class="toggle">Background color</span>
+	<span class="toggle" style="display: block;">Background color</span>
 	<div id="colorbackground" class="define_color toggle">
 		<div id="picker-wrapper-fond" class="picker-wrapper">
 			<div id="picker-fond"></div>
@@ -71,7 +71,7 @@ console.log(value);
 </div>
 
 <div id="btn-font" class="btn-2 btn-left btn-color">
-	<span class="toggle">Font color</span>
+	<span class="toggle" style="display: block;">Font color</span>
 	<div id="colorFont" class="define_color toggle">
 		<div id="picker-wrapper-font" class="picker-wrapper">
 			<div id="picker-font"></div>
@@ -100,8 +100,10 @@ console.log(value);
 					sliderCoordinate, pickerCoordinate
 					);
 
-				$("[data-focus=true]").css('color', hex);
+				$('[data-focus=true] > [name=testeurTextarea]').css('color', hex);
 				$("#btn-font").css('border-left-color', hex);
+				fontColor = hex;
+				console.log(fontColor);
 
 			});
 

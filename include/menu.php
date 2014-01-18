@@ -71,7 +71,7 @@
     	<div class="h2">My selection</div>
         <div id="contenuPanier">
             <div id="empty"><p>Your selection is empty</p></div>
-            <ul></ul>
+            <ul class="collectionList"></ul>
             <div id="panier">
                 <div id="nombreItemPanier"></div>
             </div>

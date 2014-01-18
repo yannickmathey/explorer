@@ -213,6 +213,7 @@ $(function() {
 		//changer class du li cliqué
 		$(this).removeAttr('class');
 		$(this).attr('class', codeFocus);
+		$('#resultat .listeAjouter').attr('data-font', codeFocus);
 	});
 
 	// clic cercle graisse
@@ -235,6 +236,7 @@ $(function() {
 		//changer class du li cliqué
 		$(this).removeAttr('class');
 		$(this).attr('class', codeFocus);
+		$('#resultat .listeAjouter').attr('data-font', codeFocus);
 	});
 
 });

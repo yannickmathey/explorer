@@ -39,9 +39,9 @@
         <div id="resultat" data-font="addFont" class="C4G4">
             <div id="menuAjouter">
                 <img src="img/fleche.png" />
-                <p class="listeAjouter">Add to your collection</p>
+                <p class="rouge">Add to your collection</p>
                 <ul>
-                    <li>Only add this font</li>
+                    <li class="listeAjouter" data-font="C4G4" >Only add this font</li>
                     <li>Add this width pack</li>
                     <li>Add the both slant</li>
                 </ul>
