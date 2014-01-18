@@ -1,3 +1,7 @@
+cart = [];
+
+
+
 //fonction d'initialisation
 $(document).ready(function () {
 	nombreItemPanier();
@@ -33,9 +37,6 @@ function glissementMenu() {
 	});
 
 };
-
-
-
 
 function displayScreen() {
 	$("#menu1 li").click(function(event) {
@@ -76,7 +77,7 @@ function displayScreen() {
 };
 
 function nombreItemPanier() {
-	var n = $("#contenuPanier li").length;
+	var n = cart.length;
 	if (n==0){
 		$("#empty").css("display", "block");
 		$("#nombreItemPanier").css("display", "none");
@@ -91,48 +92,38 @@ function nombreItemPanier() {
 $(function(){
 	$(document).on("click", ".listeAjouter", function(e) {
 		var content = $(this).attr("data-font");
-		console.log(">>" + $(this).attr("data-font"));
-		var panier = {};
-		panier[''] = content;
 
-		//$("#contenuPanier ul").html("<li>" + content + "</li>");
+		
 
 		remplirPanier(content);
 		nombreItemPanier();
-		supprimer();
+		//console.log(cart);
 
 	});
 });
 
 
-function remplirPanier(id) {
-	var contenuPanier = $("#contenuPanier ul").html();
+function remplirPanier(content) {
 
-	/*
-	// Vérifier si la fonte n'est pas déjà dans le panier ::
-
-	var duplicata = false;
-
-	$("#contenuPanier ul a").each(function(id) {
-		var codeVariante = $(this).attr("name");
-		console.log(">>" + codeVariante);
-		if(codeVariante == id) {
-			duplicata = true ;
-			return duplicata;
+	if ($.inArray(content, cart) !== -1 ) {}
+	else {
+		if (content != "" ) {
+			cart.push( content );
+			cart = cart.filter(function(e){return e}); 
 		}
-		else {};
+	}
+	
+	
+	$("#contenuPanier ul").empty();
+	for ( var i = 0; i < cart.length; i++ ) {
 
-		alert('ok');
+		$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
 
-		if(duplicata == false) {
-			$("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li>" + parcourirTableau(id) + "<span class='btnSupprimer' id='btn-" + id + "'>✕</span></li></a>");
-		}
-		else {};
-		console.log(duplicata);
-	});
-*/
+	}
 
-$("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li class='nomVarPano'>" + parcourirTableau(id) + "<span class='btnSupprimer' id='btn-" + id + "'>✕</span></li></a>");
+	console.log("après ajout = " + cart );
+	//$("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li class='nomVarPano'>" + parcourirTableau(id) + "<span class='btnSupprimer' id='btn-" + id + "'>✕</span></li></a>");
+
 
 };
 
@@ -160,13 +151,20 @@ function define_color() {
 
 }
 
-function supprimer() {
-	$("span.btnSupprimer").click(function(){
-		var aSupprimer = $(this).parents().eq(1).remove();
+$(function(){
+	$(document).on("click", "span.btnSupprimer", function(e) {
+		var itemtoRemove = $(this).parents().eq(1).attr("name");
+
+		cart = $.grep(cart, function(value) { return value !== itemtoRemove; });  
+		cart = cart.filter(function(e){return e}); 
+		console.log("après remove = " + cart );
+
+
+		remplirPanier();
 		nombreItemPanier();
 	}
 	);
-};
+});
 
 
 var indexThickness = 1;
@@ -321,31 +319,45 @@ function Corps() {
 $(function() {
 
 	$("#menu3 li").on('click',function() {
+		var currentContent = '';
+		var currentTitle = '';
 		codeFocus = $(this).attr("class");
-		$('[data-focus=true]').fadeOut('slow', function() {
+
+			$('[data-focus=true]').fadeOut('slow', function() {
+
 			$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
+			$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
 			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
-			var currentContent = $('[name=testeurTextarea] > span').html();
-			var currentTitle = $('[data-focus=true]').attr('title');
+		
+			
+			currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
 
-			console.log(
-				'currentContent = ' + currentContent
-				+ ' & ' +
-				'currentTitle = ' + currentTitle
-				);
-
-			// Si le text a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
-			tableau.filter(function (person) { 
-				if (person.nom == currentContent) {
-					$('[data-focus=true] > [name=testeurTextarea] > span').empty().append(parcourirTableau(codeFocus));
-					return person.nom == currentContent;
+			// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
+			tableau.filter(function (font) { 
+				currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
+				if (font.nom == currentContent) {
+					$('[data-focus=true] > [name=testeurTextarea] span').empty().append(parcourirTableau(codeFocus));
+					return font.nom == currentContent;
 				}
 			});
 
+			/*
+			console.log(
+				'\n' +
+				'currentContent = ' + currentContent
+				+ '\n' +
+				'currentTitle = ' + currentTitle
+				+ '\n' +
+				'data-font = ' + $("[data-focus=true] .listeAjouter").attr("data-font")
+				+ '\n' +
+				'codeFocus = ' + codeFocus
+				+ '\n'
+				);
+			*/
 
 			$('[data-focus=true]').fadeIn('slow');
-			return codeFocus;
+			//return codeFocus;
 		});
 
 	});
