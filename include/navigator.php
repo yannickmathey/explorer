@@ -8,7 +8,7 @@
 
 
 
-        <ul id="circle_0" class="circleMenu recepteurGlyphe clearfix">
+        <ul id="circle_0" class="circleMenu recepteurGlyphe clearfix" name="width">
             <div id="red" class="bg-svg"><?php include 'include/red.php'; ?></div>
             <li name="C4" class="C4G4"><span class="conteneur rouge">a</span></li>
             <li name="C5" class="C5G4"><span class="conteneur rouge">a</span></li>
@@ -19,7 +19,7 @@
         <span class="legende legende_0"><div id="legende_0">width</div></span>
         </ul>
 
-        <ul id="circle_1" class="circleMenu recepteurGlyphe">
+        <ul id="circle_1" class="circleMenu recepteurGlyphe" name="thickness">
             <div id="blue" class="bg-svg"><?php include 'include/blue.php'; ?></div>
             <li name="G4" class="C4G4"><span class="conteneur bleu">a</span></li>
             <li name="G5" class="C4G5"><span class="conteneur bleu">a</span></li>

@@ -8,7 +8,7 @@
     </div>
     -->
 
-    <div id="testeur" class="C4G4 blanc" spellcheck="false">
+    <div id="testeur" class="blanc" spellcheck="false">
         <div class="line clearfix" data-focus="true">
             <div class="options">
                 <button class="delete">&#10005;</button>

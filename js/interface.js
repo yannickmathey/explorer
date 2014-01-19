@@ -133,7 +133,7 @@ function toggleItalic() {
 	$(document).on("click", ".toggleItalic", function(e) {
 		$("span.conteneur").toggleClass("italic");
 		$("#resultat").toggleClass("italic");
-		$('[data-focus=true] > span').toggleClass("italic");
+		$('[data-focus=true] > [name=testeurTextarea] span').toggleClass("italic");
 	});
 }
 
@@ -169,69 +169,8 @@ $(function(){
 });
 
 
-var indexThickness = 1;
-var indexWidth = 1;
 
 
-$(document).keydown(function(e){
-
-	switch(e.which) {
-	        case 37: // left
-	        var angleDegres = 45;
-	        var nombreItems = 8;
-	        var id = 1;
-	        $("ul#circle_" + id).transition({ rotate: angleDegres * indexThickness - ( 360 / nombreItems * 2 ) * indexThickness }, 'slow');
-	        $("ul#circle_" + id + " li").each(function() {
-	        	$(this).transition({ rotate: -angleDegres * indexThickness + ( 360 / nombreItems * 2 ) * indexThickness }, 'slow');
-	        });
-	        if (indexThickness > 7) { indexThickness = 0 }
-	        	else { indexThickness = indexThickness + 1; }
-	        console.log("indexThickness : " + indexThickness);
-	        break;
-
-	    	case 39: // right
-	    	var angleDegres = 45;
-	    	var nombreItems = 8;
-	    	var id = 1;
-	    	$("ul#circle_" + id).transition({ rotate: angleDegres * -1 * indexThickness - ( 360 / nombreItems * 2 ) * indexThickness }, 'slow');
-	    	$("ul#circle_" + id + " li").each(function() {
-	    		$(this).transition({ rotate: -angleDegres * -1 * indexThickness + ( 360 / nombreItems * 2 ) * indexThickness }, 'slow');
-	    	});
-	    	if (indexThickness = 0) { indexThickness = 8 }
-	    		else { indexThickness = indexThickness - 1; }
-	    	console.log("indexThickness : " + indexThickness);
-	    	break;
-
-	        case 38: // up
-	        var angleDegres = 60;
-	        var nombreItems = 6;
-	        var id = 0;
-	        $("ul#circle_" + id).transition({ rotate: angleDegres * indexWidth - ( 360 / nombreItems * 2 ) * indexWidth }, 'slow');
-	        $("ul#circle_" + id + " li").each(function() {
-	        	$(this).transition({ rotate: -angleDegres * indexWidth + ( 360 / nombreItems * 2 ) * indexWidth }, 'slow');
-	        });
-	        if (indexWidth > 6) { indexWidth = 0 }
-	        	else { indexWidth = indexWidth + 1; }
-	        console.log("indexWidth : " + indexWidth);
-	        break;
-
-	        case 40: // down
-	        var angleDegres = 60;
-	        var nombreItems = 6;
-	        var id = 0;
-	        $("ul#circle_" + id).transition({ rotate: angleDegres * -1 * indexWidth - ( 360 / nombreItems * 2 ) * indexWidth }, 'slow');
-	        $("ul#circle_" + id + " li").each(function() {
-	        	$(this).transition({ rotate: -angleDegres * -1 * indexWidth + ( 360 / nombreItems * 2 ) * indexWidth }, 'slow');
-	        });
-	        if (indexWidth <= 0) { indexWidth = 6 }
-	        	else { indexWidth = indexWidth - 1; }
-	        console.log("indexWidth : " + indexWidth);
-	        break;
-
-	        default: return; // exit this handler for other keys
-	    }
-	    e.preventDefault();
-	});
 
 
 // Placer le caret (curseur) à la fin du textarea
@@ -337,7 +276,7 @@ $(function() {
 			tableau.filter(function (font) { 
 				currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
 				if (font.nom == currentContent) {
-					$('[data-focus=true] > [name=testeurTextarea] span').empty().append(parcourirTableau(codeFocus));
+					$('[data-focus=true] > [name=testeurTextarea] span').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
 					return font.nom == currentContent;
 				}
 			});
