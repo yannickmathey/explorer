@@ -199,7 +199,7 @@ function rotation(id, angleDegres, nombreItems) {
 $(document).keydown(function(e){
 	
 	switch(e.which) {
-        case 37: // left
+        case 38:
         var angleDegres = 45;
         var nombreItems = 8;
         var id = 1;
@@ -214,11 +214,11 @@ $(document).keydown(function(e){
         var temp = parseInt(currentThickness.substr(1,1)) + 1;
         if ( temp == 9 ) { temp = 1 }
 		currentThickness = 'G' + temp;
-		console.log('cT = ' + currentThickness);
+
 		sentinelle();
 		break;
 
-    	case 39: // right
+    	case 40:
     	var angleDegres = 45;
     	var nombreItems = 8;
     	var id = 1;
@@ -233,11 +233,11 @@ $(document).keydown(function(e){
     	var temp = parseInt(currentThickness.substr(1,1)) - 1;
         if ( temp == 0 ) { temp = 8 }
 		currentThickness = 'G' + temp;
-		console.log('cT = ' + currentThickness);
+
 		sentinelle();
 		break;
 
-        case 38: // up
+        case 39:
         var angleDegres = 60;
         var nombreItems = 6;
         var id = 0;
@@ -252,11 +252,11 @@ $(document).keydown(function(e){
         var temp = parseInt(currentWidth.substr(1,1)) + 1;
         if ( temp == 7 ) { temp = 1 }
 		currentWidth = 'C' + temp;
-		console.log("cW = " + currentWidth);
+
 		sentinelle();
 		break;
 
-        case 40: // down
+        case 37:
         var angleDegres = 60;
         var nombreItems = 6;
         var id = 0;
@@ -271,7 +271,7 @@ $(document).keydown(function(e){
         var temp = parseInt(currentWidth.substr(1,1)) - 1;
         if ( temp == 0 ) { temp = 6 }
 		currentWidth = 'C' + temp;
-		console.log("cW = " + currentWidth);
+
 		sentinelle();
 		break;
 
@@ -364,11 +364,11 @@ function sentinelle(){
 	codeFocus = currentWidth + currentThickness;
 	$("#resultat").attr("class", codeFocus );
 	$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
-	$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
-	$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
-	$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
-	$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
-	$('[data-focus=true] > [name=testeurTextarea]').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
+	
+	getText();
+
+	$("#menu3 li").attr('style', '');
+	$("#menu3 li." + codeFocus).css('color', 'white');
 	//$("ul.recepteurGlyphe li").fadeToggle();
 }
 

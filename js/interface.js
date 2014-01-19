@@ -257,20 +257,29 @@ $(function() {
 		
 		$("#menu3 li").attr('style', '');
 		$(this).css('color', 'white');
-
-		var currentContent = '';
-		var currentTitle = '';
 		codeFocus = $(this).attr("class");
-
-			$('[data-focus=true]').fadeOut('slow', function() {
-
-			$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
-			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
-			$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
-			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
+		getText();
 		
-			
-			currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
+			//return codeFocus;
+	});
+
+});
+
+
+
+function getText( el ) {
+	var currentContent = '';
+	var currentTitle = '';
+
+	$('[data-focus=true]').fadeOut('slow', function() {
+
+		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
+		$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
+		$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
+		$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
+		
+
+		currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
 
 			// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
 			tableau.filter(function (font) { 
@@ -280,28 +289,9 @@ $(function() {
 					return font.nom == currentContent;
 				}
 			});
-
-			/*
-			console.log(
-				'\n' +
-				'currentContent = ' + currentContent
-				+ '\n' +
-				'currentTitle = ' + currentTitle
-				+ '\n' +
-				'data-font = ' + $("[data-focus=true] .listeAjouter").attr("data-font")
-				+ '\n' +
-				'codeFocus = ' + codeFocus
-				+ '\n'
-				);
-			*/
-
-			$('[data-focus=true]').fadeIn('slow');
-			//return codeFocus;
-		});
-
 	});
-
-});
+	$('[data-focus=true]').fadeIn('fast');
+}
 
 // Ajouter styles dans textarea testeur
 $(function(){
