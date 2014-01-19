@@ -283,10 +283,54 @@ function getText( el ) {
 		
 
 		currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
+		currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//			// FIXME : currentContent ne marche qu'une fois. car dans une fonction nommée?
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
+			//
 
 			// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
 			tableau.filter(function (font) { 
-				currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
 				if (font.nom == currentContent) {
 					$('[data-focus=true] > [name=testeurTextarea] span').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
 					return font.nom == currentContent;
