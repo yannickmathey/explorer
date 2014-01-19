@@ -1,6 +1,7 @@
 cart = [];
 fontColor = "#ffffff";
 codeFocus = "C4G4";
+displayLiveTest = false;
 
 
 
@@ -45,6 +46,7 @@ function displayScreen() {
 		var $target = $(event.target);
 
 		if ( ($target).is('#btnLiveTest') ) {
+			displayLiveTest = true;
 			glissementMenu();
 
 			$('#conteneurNavigator').fadeOut('fast',
@@ -60,6 +62,7 @@ function displayScreen() {
 		}
 
 		else {
+			displayLiveTest = false;
 			glissementMenu();
 
 			$('#conteneurLiveTest').fadeOut('fast',

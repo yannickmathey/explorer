@@ -168,17 +168,18 @@ function rotation(id, angleDegres, nombreItems) {
 		if (id < 2) { index = index -1; }
 		$("ul#circle_" + id).transition({ rotate: angleDegres * index - ( 360 / nombreItems * 2 ) * index }, 'slow');
 		
-		type = $(this).attr("name");
-		var temp = type.substr(0,1);
-		if(temp == 'C') {
-			currentWidth = type;
-			console.log(currentWidth);
+		if (id != 2 ){ // sauf s'il s'agit des glyphes
+			type = $(this).attr("name");
+			var temp = type.substr(0,1);
+			if(temp == 'C') {
+				currentWidth = type;
+				console.log(currentWidth);
+			}
+			else if(temp == 'G') {
+				currentThickness = type;
+				console.log(currentThickness);
+			}
 		}
-		else if(temp == 'G') {
-			currentThickness = type;
-			console.log(currentThickness);
-		}
-		
 
 		// Pour redresser les elements li
 		$("ul#circle_" + id + " li").each(function() {
@@ -196,8 +197,22 @@ function rotation(id, angleDegres, nombreItems) {
 
 
 
-$(document).keydown(function(e){
+$(document).keypress(function(e){
 	
+	code = e.keyCode || e.which;
+	var alphaNum = String.fromCharCode(code);
+	// console.log(code);
+
+	if (displayLiveTest == false ) {
+		if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90  || event.keyCode >= 97 && event.keyCode <= 122) {
+    		$('#circleMenu span.conteneur').empty().append(alphaNum);
+    	}
+	}
+
+});
+
+$(document).keydown(function(e){
+
 	switch(e.which) {
         case 38:
         var angleDegres = 45;
