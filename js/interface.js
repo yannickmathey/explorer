@@ -2,6 +2,7 @@ cart = [];
 fontColor = "#ffffff";
 codeFocus = "C4G4";
 displayLiveTest = false;
+italic = false;
 
 
 
@@ -13,13 +14,11 @@ $(document).ready(function () {
 	corps = 40;
 	var panier = {};
 	displayScreen();
-	CaretFinTexte();
 	Corps();
 	define_color();
 	setTimeout(function() {
 		$('#rideau').fadeOut();
 	}, 1000);
-	toggleItalic();
 });
 
 
@@ -93,14 +92,26 @@ function nombreItemPanier() {
 	}
 };
 
+// Ajouter current font
 $(function(){
-	$(document).on("click", ".listeAjouter", function(e) {
+	$(document).on("click", ".ajouterFont", function(e) {
 
 		var content = $(this).attr("data-font");
 
-		
+		remplirPanier(content, "font");
+		nombreItemPanier();
+		//console.log(cart);
 
-		remplirPanier(content);
+	});
+});
+
+// Ajouter both slants
+$(function(){
+	$(document).on("click", ".ajouterSlants", function(e) {
+
+		var content = $(this).attr("data-font");
+
+		remplirPanier(content, "slants");
 		nombreItemPanier();
 		//console.log(cart);
 
@@ -108,37 +119,71 @@ $(function(){
 });
 
 
-function remplirPanier(content) {
+function remplirPanier(content, type) {
 
-	if ($.inArray(content, cart) !== -1 ) {}
-	else {
-		if (content != "" ) {
+	if (content != "" ) {
+		if ( type == "slants" ) {
+
 			cart.push( content );
-			cart = cart.filter(function(e){return e}); 
+			cart.push( content+"I" );
+			console.log("addSlant");
 		}
+		else {
+			cart.push( content );
+		}
+		cart = cart.filter(function(e){return e});
+		var removeDoublons = [];
+		$.each(cart, function(i, el){
+		    if($.inArray(el, removeDoublons) === -1) removeDoublons.push(el);
+		});
+		cart = removeDoublons;
+
 	}
-	
-	
 	$("#contenuPanier ul").empty();
+
 	for ( var i = 0; i < cart.length; i++ ) {
 
-		$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
+			if ( type == 'slants' ) {
+				console.log("a");
+				$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
+			}
+			else { 
+				console.log("b"); 
+				$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
+			}
+
+		//$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
+
+		// Nettoyer les doublons
 
 	}
+	
 
-	console.log("après ajout = " + cart );
+
+
+	// console.log("après ajout = " + cart );
 	//$("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li class='nomVarPano'>" + parcourirTableau(id) + "<span class='btnSupprimer' id='btn-" + id + "'>✕</span></li></a>");
-
 
 };
 
-function toggleItalic() {
-	$(document).on("click", ".toggleItalic", function(e) {
-		$("span.conteneur").toggleClass("italic");
-		$("#resultat").toggleClass("italic");
-		$('[data-focus=true] > [name=testeurTextarea] span').toggleClass("italic");
-	});
-}
+
+$(document).on("click", ".toggleItalic", function(e) {
+	if (italic) { italic = false } else { italic = true }
+	$("span.conteneur").toggleClass("italic");
+	$("#resultat").toggleClass("italic");
+	$("#resultat").toggleClass("italic");
+	var codeFocus = currentWidth+currentThickness;
+	if ( italic ) {
+		codeFocus = codeFocus.substr(0,4);
+		codeFocus += "I";
+	}
+	else {
+		codeFocus = codeFocus.substr(0,4);
+	}
+	$('[name=addCart]').attr('data-font', codeFocus);
+	$('[data-focus=true] > [name=testeurTextarea] span').toggleClass("italic");
+});
+
 
 function define_color() {
 	$('.btn-color span').on('click', function(){
@@ -160,8 +205,8 @@ $(function(){
 	$(document).on("click", "span.btnSupprimer", function(e) {
 		var itemtoRemove = $(this).parents().eq(1).attr("name");
 
-		cart = $.grep(cart, function(value) { return value !== itemtoRemove; });  
-		cart = cart.filter(function(e){return e}); 
+		cart = $.grep(cart, function(value) { return value !== itemtoRemove; });
+		cart = cart.filter(function(e){return e});
 		console.log("après remove = " + cart );
 
 
@@ -171,36 +216,6 @@ $(function(){
 	);
 });
 
-
-
-
-
-
-// Placer le caret (curseur) à la fin du textarea
-function moveCaretToEnd(el) {
-	if (typeof el.selectionStart == "number") {
-		el.selectionStart = el.selectionEnd = el.value.length;
-	} else if (typeof el.createTextRange != "undefined") {
-		el.focus();
-		var range = el.createTextRange();
-		range.collapse(false);
-		range.select();
-	}
-}
-
-function CaretFinTexte() {
-	/*
-	var textarea = document.getElementById("testeurTextarea");
-	textarea.onfocus = function() {
-		moveCaretToEnd(textarea);
-
-	    // Work around Chrome's little problem
-	    window.setTimeout(function() {
-	    	moveCaretToEnd(textarea);
-	    }, 1);
-	};
-	*/
-}
 
 
 
@@ -233,8 +248,6 @@ function Corps() {
 	function interlignage(corps){
 
 		var rapportCorpsInterLignage = 1.4;
-
-		
 		if(corps<=40){
 			rapportCorpsInterLignage = 1.6;
 		}
@@ -244,7 +257,6 @@ function Corps() {
 		else {
 			rapportCorpsInterLignage = 1.4;
 		}
-		
 
 		var interlignage = Math.floor(Math.round((corps * rapportCorpsInterLignage) * 100) / 100);
 		return interlignage;
@@ -257,12 +269,12 @@ function Corps() {
 $(function() {
 
 	$("#menu3 li").on('click',function() {
-		
+
 		$("#menu3 li").attr('style', '');
 		$(this).css('color', 'white');
 		codeFocus = $(this).attr("class");
 		getText();
-		
+
 			//return codeFocus;
 	});
 
@@ -278,67 +290,24 @@ function getText( el ) {
 
 		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 		$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
-		$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
+		$('[data-focus=true] .ajouterFont').attr('data-font', codeFocus);
 		$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
-		
 
 		currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
 		currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//			// FIXME : currentContent ne marche qu'une fois. car dans une fonction nommée?
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
-			//
 
-			// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
-			tableau.filter(function (font) { 
-				if (font.nom == currentContent) {
-					$('[data-focus=true] > [name=testeurTextarea] span').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
-					return font.nom == currentContent;
-				}
-			});
+		// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
+		tableau.filter(function (font) {
+			if (font.nom == currentContent) {
+				$('[data-focus=true] > [name=testeurTextarea] span').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
+				return font.nom == currentContent;
+			}
+		});
 	});
 	$('[data-focus=true]').fadeIn('fast');
 }
+
+
 
 // Ajouter styles dans textarea testeur
 $(function(){
@@ -347,7 +316,7 @@ $(function(){
 			var button = $('#addLine');
 			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
 			//var font = parcourirTableau(codeFocus);
-			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><button class="delete">&#10005;</button><img class="listeAjouter" data-font="' + codeFocus + '" src="./img/panier.png" /></div><div contenteditable="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
+			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><button class="delete">&#10005;</button><img class="ajouterFont" data-font="' + codeFocus + '" src="./img/panier.png" /></div><div contenteditable="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
 			$('#testeur').append(newTextarea);
 
 			button.appendTo("#testeur:last-child")
@@ -370,7 +339,7 @@ $(function(){
 		$(this).closest('.line').slideUp('slow', function(){
 			$(this).closest('.line').remove();
 		});
-		
+
 	})
 });
 

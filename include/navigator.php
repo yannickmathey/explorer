@@ -41,9 +41,9 @@
                 <img src="img/fleche.png" />
                 <p class="rouge">Add to your collection</p>
                 <ul>
-                    <li class="listeAjouter" data-font="C4G4" >Only add this font</li>
-                    <li>Add this width pack</li>
-                    <li>Add the both slant</li>
+                    <li name="addCart" class="ajouterFont" data-font="C4G4" >Only add this font</li>
+                    <li name="addCart" class="ajouterFamille" data-font="C4G4" >Add this width pack</li>
+                    <li name="addCart" class="ajouterSlants" data-font="C4G4" >Add the both slant</li>
                 </ul>
             </div>
             <span class="conteneur blanc">a</span>

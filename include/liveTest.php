@@ -4,7 +4,7 @@
     <div id="enteteLiveTest" class="rouge">
         <span id="nomVariante" class="blanc">Panorama Regular</span>
 
-        <span class="listeAjouter">&nbsp; — &nbsp;ADD TO MY COLLECTION</span>
+        <span class="ajouterFont">&nbsp; — &nbsp;ADD TO MY COLLECTION</span>
     </div>
     -->
 
@@ -12,7 +12,7 @@
         <div class="line clearfix" data-focus="true">
             <div class="options">
                 <button class="delete">&#10005;</button>
-                <img class="listeAjouter" data-font="C4G4" src="./img/panier.png" />
+                <img class="ajouterFont" data-font="C4G4" src="./img/panier.png" />
             </div>
             <div    contenteditable="true" 
                     title="Panorama Regular" 

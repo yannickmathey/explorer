@@ -208,7 +208,6 @@ $(document).keypress(function(e){
     		$('#circleMenu span.conteneur').empty().append(alphaNum);
     	}
 	}
-
 });
 
 $(document).keydown(function(e){
@@ -324,7 +323,7 @@ $(function() {
 		$("#debug span#codeFocus").empty().append(codeFocus);
 		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
-			$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
+			$('[data-focus=true] [name=addCart]').attr('data-font', codeFocus);
 			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");
 		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
@@ -332,7 +331,7 @@ $(function() {
 		//changer class du li cliqué
 		$(this).removeAttr('class');
 		$(this).attr('class', codeFocus);
-		$('#resultat .listeAjouter').attr('data-font', codeFocus);
+		$('#resultat [name=addCart]').attr('data-font', codeFocus);
 		currentWidth = codeChasse;
 	});
 
@@ -350,7 +349,7 @@ $(function() {
 		$("#debug span#codeFocus").empty().append(codeFocus);
 		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
-			$('[data-focus=true] .listeAjouter').attr('data-font', codeFocus);
+			$('[data-focus=true] [name=addCart]').attr('data-font', codeFocus);
 			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
 		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");		
@@ -358,7 +357,7 @@ $(function() {
 		//changer class du li cliqué
 		$(this).removeAttr('class');
 		$(this).attr('class', codeFocus);
-		$('#resultat .listeAjouter').attr('data-font', codeFocus);
+		$('#resultat [name=addCart]').attr('data-font', codeFocus);
 		currentThickness = codeGraisse;
 	});
 

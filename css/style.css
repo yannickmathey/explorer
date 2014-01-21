@@ -286,11 +286,15 @@ a:visited {
     color: white !important;
 }
 
-.listeAjouter {
+.ajouterFont {
     color: #FF1D25;
     cursor: pointer;
 }
 
+[name=addCart]:hover {
+    cursor: pointer;
+    opacity: .7;
+}
 
 #menuAjouter ul {
     display: block;
@@ -299,9 +303,6 @@ a:visited {
     -webkit-transition: all 500ms ease-out;
 }
 
-.listeAjouter {
-    cursor: pointer;
-}
 
 #menuAjouter li {
     padding: 4px 0;
