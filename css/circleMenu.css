@@ -30,6 +30,7 @@ li { text-align:center; line-height:1em; }
 #repere p {
 	text-align:right;
 	float: right;
+	overflow: hidden;
 }
 #repere span {
 	vertical-align:middle;
@@ -89,7 +90,6 @@ li { text-align:center; line-height:1em; }
 	z-index:500;
 	width: 30%;
 	text-align: center;
-	background-color: #0e0c0e;
 	height: 30%;
 	border-radius: 50%;
 	line-height: 30%;
