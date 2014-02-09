@@ -2,13 +2,13 @@
 
     <!--
     <div id="enteteLiveTest" class="rouge">
-        <span id="nomVariante" class="blanc">Panorama Regular</span>
+        <span id="nomVariante" class="noir">Panorama Regular</span>
 
         <span class="ajouterFont">&nbsp; — &nbsp;ADD TO MY COLLECTION</span>
     </div>
     -->
 
-    <div id="testeur" class="blanc" spellcheck="false">
+    <div id="testeur" class="noir" spellcheck="false">
         <div class="line clearfix" data-focus="true">
             <div class="options">
                 <button class="delete">&#10005;</button>

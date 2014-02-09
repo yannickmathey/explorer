@@ -55,7 +55,7 @@ function tracer(){
 			'margin-top': '' + marginTopConteneur + 'px',
 			height: tailleConteneur,
 		});
-		//console.log(marginTopConteneur);
+		//// console.log(marginTopConteneur);
 	});
 
 
@@ -87,9 +87,9 @@ function tracer(){
 		$("#resultat span").css({
 			'line-height': hauteurResultat + 'px',
 		});
-		// console.log('largeurConteneur :' + largeurConteneur);
-		// console.log('hauteurResultat :' + hauteurResultat);
-		// console.log('postTop :' + postTop);
+		// // console.log('largeurConteneur :' + largeurConteneur);
+		// // console.log('hauteurResultat :' + hauteurResultat);
+		// // console.log('postTop :' + postTop);
 
 		// Poisitionner légendes
 		$(".legende_0").css({
@@ -162,7 +162,7 @@ function rotation(id, angleDegres, nombreItems) {
 	
 	$("ul#circle_" + id + " li").click(function() {
 		var total_li = $("ul#circle_" + id + " li").size() / 2 + 1 ;
-		// console.log("nb li du cercle " + id + " :" + total_li);		
+		// // console.log("nb li du cercle " + id + " :" + total_li);		
 		var reverse = false;
 		var index = $(this).index();
 		if (id < 2) { index = index -1; }
@@ -173,11 +173,11 @@ function rotation(id, angleDegres, nombreItems) {
 			var temp = type.substr(0,1);
 			if(temp == 'C') {
 				currentWidth = type;
-				console.log(currentWidth);
+				// console.log(currentWidth);
 			}
 			else if(temp == 'G') {
 				currentThickness = type;
-				console.log(currentThickness);
+				// console.log(currentThickness);
 			}
 		}
 
@@ -192,7 +192,7 @@ function rotation(id, angleDegres, nombreItems) {
 		});
 
 	});
-	//console.log("----");
+	//// console.log("----");
 };
 
 
@@ -201,7 +201,7 @@ $(document).keypress(function(e){
 	
 	code = e.keyCode || e.which;
 	var alphaNum = String.fromCharCode(code);
-	// console.log(code);
+	// // console.log(code);
 
 	if (displayLiveTest == false ) {
 		if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90  || event.keyCode >= 97 && event.keyCode <= 122) {
@@ -313,11 +313,22 @@ $(function() {
 	$("ul#circle_0 li").click(function() {
 		codeChasse = $(this).attr("name");
 		codeFocus = codeChasse + codeGraisse;
+		$("#resultat").attr("class", codeFocus );
+		$(this).removeAttr('class');
+		$(this).attr('class', codeFocus);
+
+		if ( italic ) {
+			codeFocus = codeFocus.substr(0,4);
+			codeFocus += "I";
+		}
+		else {
+			codeFocus = codeFocus.substr(0,4);
+		}
+
 		$("ul#circle_1 li").each(function(){
 			var sonCode = $(this).attr("name");
 			$(this).attr("class", codeChasse + sonCode);
 		});
-		$("#resultat").attr("class", codeFocus );
 		//$("#testeur").attr("class", codeFocus );
 		$("#debug span#codeChasse").empty().append(codeChasse);
 		$("#debug span#codeFocus").empty().append(codeFocus);
@@ -329,8 +340,7 @@ $(function() {
 		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
 		$('[data-focus=true] > [name=testeurTextarea]').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
 		//changer class du li cliqué
-		$(this).removeAttr('class');
-		$(this).attr('class', codeFocus);
+
 		$('#resultat [name=addCart]').attr('data-font', codeFocus);
 		currentWidth = codeChasse;
 	});
@@ -339,11 +349,22 @@ $(function() {
 	$("ul#circle_1 li").click(function() {
 		codeGraisse = $(this).attr("name");
 		codeFocus = codeChasse + codeGraisse;
+		$("#resultat").attr("class", codeFocus );
+		$(this).removeAttr('class');
+		$(this).attr('class', codeFocus);
+		
+		if ( italic ) {
+			codeFocus = codeFocus.substr(0,4);
+			codeFocus += "I";
+		}
+		else {
+			codeFocus = codeFocus.substr(0,4);
+		}
+
 		$("ul#circle_0 li").each(function(){
 			var sonCode = $(this).attr("name");
 			$(this).attr("class", sonCode + codeGraisse );
 		});
-		$("#resultat").attr("class", codeFocus );
 		//$("#testeur").attr("class", codeFocus );
 		$("#debug span#codeGraisse").empty().append(codeGraisse);
 		$("#debug span#codeFocus").empty().append(codeFocus);
@@ -355,8 +376,7 @@ $(function() {
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");		
 		$('[data-focus=true] > [name=testeurTextarea]').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
 		//changer class du li cliqué
-		$(this).removeAttr('class');
-		$(this).attr('class', codeFocus);
+
 		$('#resultat [name=addCart]').attr('data-font', codeFocus);
 		currentThickness = codeGraisse;
 	});

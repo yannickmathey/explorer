@@ -1,4 +1,5 @@
 cart = [];
+cartTEMP = [];
 fontColor = "#ffffff";
 codeFocus = "C4G4";
 displayLiveTest = false;
@@ -118,19 +119,70 @@ $(function(){
 	});
 });
 
+// Ajouter pack
+$(function(){
+	$(document).on("click", ".ajouterFamille", function(e) {
+
+		var content = $(this).attr("data-font");
+
+		remplirPanier(content, "famille");
+		nombreItemPanier();
+		//console.log(cart);
+
+	});
+});
+
 
 function remplirPanier(content, type) {
 
 	if (content != "" ) {
+
+		cartTEMP = [];
+
 		if ( type == "slants" ) {
 
-			cart.push( content );
-			cart.push( content+"I" );
+			content = content.substr(0,4);
+			if ( $.inArray(content, cart) == -1 ) {
+				cart.push( content );
+			}
+			else {
+				console.log(content);
+				$("#contenuPanier ul a[name=" + content + "]").css('background-color', 'red').slideUp(800);
+			}
+			cartTEMP.push( content );
+
+			content += "I";
+
+			if ( $.inArray(content, cart) == -1 ) {
+				cart.push( content );
+			}
+			else {
+				console.log(content);
+				$("#contenuPanier ul a[name=" + content + "]").css('background-color', 'red').slideUp(800);
+			}
+			//cartTEMP.push( content );
+
+			//cart.push( content+"I" );
 			console.log("addSlant");
+
 		}
-		else {
+
+		if ( type == "famille" ) {
+
+			for (var i = 1; i <= 8; i++) {
+				laFamille = content.substr(0,2) + "G" + i;
+				cart.push( laFamille );
+				cart.push( laFamille + "I" );
+				cartTEMP.push( laFamille );
+				cartTEMP.push( laFamille + "I" );
+			};
+		}
+
+		if ( $.inArray(content, cart) == -1 ) {
 			cart.push( content );
+			cartTEMP.push( content );
 		}
+
 		cart = cart.filter(function(e){return e});
 		var removeDoublons = [];
 		$.each(cart, function(i, el){
@@ -139,18 +191,38 @@ function remplirPanier(content, type) {
 		cart = removeDoublons;
 
 	}
-	$("#contenuPanier ul").empty();
+	//$("#contenuPanier ul").empty();
 
-	for ( var i = 0; i < cart.length; i++ ) {
+	for ( var i = 0; i < cartTEMP.length; i++ ) {
 
 			if ( type == 'slants' ) {
-				console.log("a");
-				$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
+				if(i > 1) {
+            		return false;
+            	}
+            	else {
+            		cartTEMP[i] = cartTEMP[i].substr(0,4);
+					$("#contenuPanier ul").append("<a class='slants' href='#' name='" + cartTEMP[i] + "'><li class='nomVarPano '>" + parcourirTableau(cartTEMP[i], 'famille') + "<span class='btnSupprimer' id='btn-" + cartTEMP[i] + "'>✕</span></li></a>");
+					return false;
+				}
+				//cartTEMP = [];
+			}
+			if ( type == 'famille' ) {
+				if(i > 0) {
+            		return false;
+            	}
+            	else {
+					$("#contenuPanier ul").append("<a class='famille' href='#' name='" + cartTEMP[i] + "'><li class='nomVarPano '>" + parcourirTableau(cartTEMP[i], 'famille') + "<span class='btnSupprimer' id='btn-" + cartTEMP[i] + "'>✕</span></li></a>");
+					return false;
+				}
+				//cartTEMP = [];
 			}
 			else { 
-				console.log("b"); 
-				$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
+				$("#contenuPanier ul").append("<a href='#' name='" + cartTEMP[i] + "'><li class='nomVarPano'>" + parcourirTableau(cartTEMP[i]) + "<span class='btnSupprimer' id='btn-" + cartTEMP[i] + "'>✕</span></li></a>");
+				//cartTEMP = [];
 			}
+			
+
+
 
 		//$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
 
@@ -166,11 +238,10 @@ function remplirPanier(content, type) {
 
 };
 
-
+// toggle italic
 $(document).on("click", ".toggleItalic", function(e) {
 	if (italic) { italic = false } else { italic = true }
 	$("span.conteneur").toggleClass("italic");
-	$("#resultat").toggleClass("italic");
 	$("#resultat").toggleClass("italic");
 	var codeFocus = currentWidth+currentThickness;
 	if ( italic ) {
@@ -201,6 +272,8 @@ function define_color() {
 
 }
 
+
+// supprimer un item dans le panier
 $(function(){
 	$(document).on("click", "span.btnSupprimer", function(e) {
 		var itemtoRemove = $(this).parents().eq(1).attr("name");
@@ -208,7 +281,7 @@ $(function(){
 		cart = $.grep(cart, function(value) { return value !== itemtoRemove; });
 		cart = cart.filter(function(e){return e});
 		console.log("après remove = " + cart );
-
+		$(this).parents().eq(1).remove();
 
 		remplirPanier();
 		nombreItemPanier();

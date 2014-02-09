@@ -144,7 +144,16 @@ function parcourirTableau(cible, type) {
 
     var i = tableau.inArray(cible,  "classe");
     // console.log(tableau[i].nom);
-    return tableau[i].nom;
+
+    if (type == 'famille') {
+        return tableau[i].pack;
+    }
+    if (type == 'slant') {
+        return tableau[i].pack;
+    }
+    else {
+        return tableau[i].nom;
+    }
 
 };
 

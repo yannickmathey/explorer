@@ -318,7 +318,8 @@ a:visited {
 }
 
 #resultat span.conteneur {
-        line-height: 1 !important;
+    margin-top: -1rem;
+    display: block;        
 }
 #resultat:hover span.conteneur {
     height: 0;
@@ -348,6 +349,49 @@ a:visited {
     display: block;
 }
 
+/*
+a.slants:before {
+content: "2";
+color: rgba(39, 39, 39, 0.74);
+font-size: 30px;
+position: relative;
+display: inline;
+float: left;
+left: 5px;
+top: -3px;
+font-family: "Panorama SemiCondensed-Ultra";
+}
+*/
+a.slants li:after {
+    content: "(+italic)";
+    margin-left: 5px;
+    color: #3FA9F5;
+}
+
+/*
+a.famille:before {
+content: "16";
+color: rgba(39, 39, 39, 0.74);
+font-size: 30px;
+position: relative;
+display: inline;
+float: left;
+left: 5px;
+top: -3px;
+font-family: "Panorama SemiCondensed-Ultra";
+}
+*/
+a.famille li:after {
+    content: "(pack)";
+    margin-left: 5px;
+    color: red;
+}
+
+#contenuPanier ul a {
+    display: block;
+    position: relative;
+}
+
 #contenuPanier ul a li {
     -webkit-transition-property: all;
     -webkit-transition-duration: 1s;
@@ -355,6 +399,7 @@ a:visited {
     -moz-transition-duration: 1s;
     transition-property: all;
     transition-duration: 1s;
+    position: relative;
 }
 
 #contenuPanier ul a:hover li {
