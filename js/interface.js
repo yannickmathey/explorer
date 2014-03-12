@@ -1,6 +1,6 @@
 cart = [];
 cartTEMP = [];
-fontColor = "#ffffff";
+fontColor = "black";
 codeFocus = "C4G4";
 displayLiveTest = false;
 italic = false;
@@ -21,6 +21,8 @@ $(document).ready(function () {
 		$('#rideau').fadeOut();
 	}, 1000);
 });
+
+
 
 
 function glissementMenu() {
@@ -89,7 +91,7 @@ function nombreItemPanier() {
 	else{
 		$("#nombreItemPanier").html(n);
 		$("#empty").css("display", "none");
-		$("#nombreItemPanier").css("display", "block");
+		$("#nombreItemPanier").css("display", "inline-block");
 	}
 };
 
@@ -344,7 +346,7 @@ $(function() {
 	$("#menu3 li").on('click',function() {
 
 		$("#menu3 li").attr('style', '');
-		$(this).css('color', 'white');
+		$(this).css('color', 'black');
 		codeFocus = $(this).attr("class");
 		getText();
 

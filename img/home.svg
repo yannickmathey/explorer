@@ -5945,7 +5945,7 @@
 	<circle fill="none" cx="588.716" cy="293.56" r="246.798"/>
 	<text transform="matrix(0.9261 -0.3772 0.3772 0.9261 494.6113 65.334)"><tspan x="0" y="0" fill="#B3B3B3" font-family="'Panorama-Regular'" font-size="9.7789">I</tspan><tspan x="3.272" y="-0.006" fill="#B3B3B3" font-family="'Panorama-Regular'" font-size="9.7789" rotate="1.111">T</tspan><tspan x="9.501" y="0.123" fill="#B3B3B3" font-family="'Panorama-Regular'" font-size="9.7789" rotate="2.655">A</tspan><tspan x="16.451" y="0.464" fill="#B3B3B3" font-family="'Panorama-Regular'" font-size="9.7789" rotate="4.171">L</tspan><tspan x="22.452" y="0.924" fill="#B3B3B3" font-family="'Panorama-Regular'" font-size="9.7789" rotate="5.258">I</tspan><tspan x="25.731" y="1.217" fill="#B3B3B3" font-family="'Panorama-Regular'" font-size="9.7789" rotate="6.437">C</tspan></text>
 	<rect x="536.401" y="299.755" fill="none" width="105.027" height="13.057"/>
-	<text transform="matrix(1 0 0 1 531.4097 307.5137)" fill="#FFFFFF" font-family="'Panorama-ExtraLight'" font-size="10.484">www.productiontype.com</text>
+	<text transform="matrix(1 0 0 1 531.4097 307.5137)" fill="#FFFFFF" font-family="'Panorama-ExtraLight'" font-size="9.44">www.productiontype.com</text>
 </g>
 <g id="Calque_7">
 </g>

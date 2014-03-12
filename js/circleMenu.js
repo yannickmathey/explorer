@@ -197,22 +197,22 @@ function rotation(id, angleDegres, nombreItems) {
 
 
 
-$(document).keypress(function(e){
+$(window).keypress(function(e){
 	
 	code = e.keyCode || e.which;
 	var alphaNum = String.fromCharCode(code);
 	// // console.log(code);
 
 	if (displayLiveTest == false ) {
-		if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90  || event.keyCode >= 97 && event.keyCode <= 122) {
+		if (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 65 && e.keyCode <= 90  || e.keyCode >= 97 && e.keyCode <= 122) {
     		$('#circleMenu span.conteneur').empty().append(alphaNum);
     	}
 	}
 });
 
-$(document).keydown(function(e){
-
-	switch(e.which) {
+$(window).keydown(function(e){
+	evt = e.keyCode || e.which;
+	switch( evt ) {
         case 38:
         var angleDegres = 45;
         var nombreItems = 8;
@@ -293,6 +293,36 @@ $(document).keydown(function(e){
     }
 	e.preventDefault();
 });
+
+
+// si aucune activité
+var IDLE_TIMEOUT = 30; //seconds
+var _idleSecondsCounter = 0;
+document.onclick = function() {
+    _idleSecondsCounter = 0;
+};
+document.onmousemove = function() {
+    _idleSecondsCounter = 0;
+};
+document.onkeypress = function() {
+    _idleSecondsCounter = 0;
+};
+window.setInterval(CheckIdleTime, 3000);
+
+function CheckIdleTime() {
+    _idleSecondsCounter++;
+    var oPanel = document.getElementById("SecondsUntilExpire");
+    if (oPanel)
+        oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
+    if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+        var e = jQuery.Event("keydown");
+        var number = 1 + Math.floor(Math.random() * 4);
+        console.log(number);
+		e.which = 36 + number; // # Some key code value
+		$(document).trigger(e);
+    }
+}
+
 
 
 // Pour attribuer le caractère selectionné aux différents blocs

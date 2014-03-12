@@ -28,13 +28,13 @@
 
 </head>
 
-<body>
+<body class="BGbleu">
 
 
 <div id="wrap">
 
 <?php
-	include 'include/menu.php';
+    include 'include/menu.php';
     include 'include/navigator.php';
     include 'include/liveTest.php';
 ?>
@@ -42,9 +42,9 @@
 </div><!-- END #wrap -->
 
 <div id="debug">
-	<p>chasse: <span id="codeChasse"></span></p>
-	<p>graisse: <span id="codeGraisse"></span></p>
-	<p>focus: <span id="codeFocus"></span></p>
+    <p>chasse: <span id="codeChasse"></span></p>
+    <p>graisse: <span id="codeGraisse"></span></p>
+    <p>focus: <span id="codeFocus"></span></p>
     <p>mouse: <span id="mouse"></span></p>
     <p>centre: <span id="centre"></span></p>
     <p>hover: <span id="elementHover"></span></p>

@@ -1,15 +1,15 @@
-<div id="menu_lateral">
+<div id="menu_lateral" class="BGblanc">
 
-    <a href="./"><div id="logo"></div></a>
+    <a href="./"><div id="logo" class="border borderRouge"></div></a>
 
     <div id="menu">
     	<ul id="menu1">
-            <li class="on" id="btnNavigator">Navigator</li>
-            <li id="btnLiveTest">Live Test</li>
+            <li class="mb1 on border borderRouge rouge" id="btnNavigator">Navigator</li>
+            <li id="btnLiveTest" class="mb1 border borderRouge rouge">Live Test</li>
         </ul>
         <ul id="menu2">
-        	<a href="#" class="toggleItalic"><li>Switch slant</li></a>
-            <li><a href="#">Review collection</a></li>
+        	<li class="mb1 border borderBleu bleu"><a href="#" class="toggleItalic">Roman / Italic</a></li>
+            <li class="mb1 border borderBleu bleu"><a href="#">Review cart</a></li>
         </ul>
         <div  id="menu3">
             <ul class="clearfix">
@@ -68,13 +68,10 @@
     </div>
 
     <div id="collection">
-    	<div class="h2">My selection</div>
+    	<div class="h2">My cart <span id="nombreItemPanier" class="BGrouge blanc"></span></div>
         <div id="contenuPanier">
-            <div id="empty"><p>Your selection is empty</p></div>
+            <div id="empty"><p>Your cart is empty</p></div>
             <ul class="collectionList"></ul>
-            <div id="panier">
-                <div id="nombreItemPanier"></div>
-            </div>
         </div>
     </div>
 

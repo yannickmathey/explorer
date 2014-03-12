@@ -1,5 +1,5 @@
-<div id="conteneurNavigator">
-    <div id="rideau"></div>
+<div id="conteneurNavigator" class="BGblanc">
+    <div id="rideau" class="BGbleu"></div>
     <div id="repere"><p> <span>Panorama Regular</span></p></div>
 
     <div id="circleMenu">
@@ -38,15 +38,15 @@
 
         <div id="resultat" data-font="addFont" class="C4G4">
             <div id="menuAjouter">
-                <img src="img/fleche.png" />
-                <p class="rouge">Add to your collection</p>
+                <img src="img/fleche.png"/>
+                <p class="vert">Add to cart</p>
                 <ul>
-                    <li name="addCart" class="ajouterFont" data-font="C4G4" >Only add this font</li>
-                    <li name="addCart" class="ajouterFamille" data-font="C4G4" >Add this width pack</li>
-                    <li name="addCart" class="ajouterSlants" data-font="C4G4" >Add the both slant</li>
+                    <li name="addCart" class="ajouterFont BGvert mb1 blanc" data-font="C4G4" >Add style</li>
+                    <li name="addCart" class="ajouterSlants BGvert mb1 blanc" data-font="C4G4" >Add style + italic</li>
+                    <li name="addCart" class="ajouterFamille BGvert mb1 blanc" data-font="C4G4" >Add family</li>
                 </ul>
             </div>
-            <span class="conteneur blanc">a</span>
+            <span class="conteneur rouge">a</span>
         </div><!-- END #resultat -->
 
     </div><!-- END #circleMenu -->

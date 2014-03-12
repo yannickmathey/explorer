@@ -1,4 +1,4 @@
-<div id="conteneurLiveTest">
+<div id="conteneurLiveTest" class="BGblanc gris">
 
     <!--
     <div id="enteteLiveTest" class="rouge">
@@ -18,7 +18,7 @@
                     title="Panorama Regular" 
                     name="testeurTextarea" 
                     class="testeurTextarea C4G4" 
-                    style="color: white;">
+                    style="color: black;">
                     <span>Panorama Regular</span>
             </div>
         </div>
