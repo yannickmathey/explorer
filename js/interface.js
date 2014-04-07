@@ -28,14 +28,20 @@ $(document).ready(function () {
 function glissementMenu() {
 	var $glisseMenu = $('#menu_lateral');
 
+	if (displayLiveTest ) {
+		$('#menu_lateral').css('position', 'relative');
+	} else {
+		$('#menu_lateral').css('position', 'absolute');
+	}
+
 	$glisseMenu.animate({
-		marginLeft : "-1000px",
+		marginTop : "-1000px",
 		opacity : 0
 	},
-	400,
+	800,
 	function () {
 		$glisseMenu.animate({
-			marginLeft : "0",
+			marginTop : "0",
 			opacity : 1
 		})
 	});
@@ -56,9 +62,9 @@ function displayScreen() {
 					$('#conteneurLiveTest').fadeIn(900);
 					$("#menu1 li.on").delay(10000).removeClass('on');
 					$("#menu1 li#btnLiveTest").addClass('on');
-					$("#menu3").css("display","block");
+					$("#menu3").css("display","inline");
 					$("#menu4").css("display","block");
-					$("#menu2").css("display","none");
+					$("#menu2").css("display","inline");
 				}
 				);
 		}
@@ -72,7 +78,7 @@ function displayScreen() {
 					$('#conteneurNavigator').fadeIn(900);
 					$("#menu1 li.on").delay(10000).removeClass('on');
 					$("#menu1 li#btnNavigator").addClass('on');
-					$("#menu2").css("display","block");
+					$("#menu2").css("display","inline");
 					$("#menu3").css("display","none");
 					$("#menu4").css("display","none");
 				}
@@ -86,11 +92,13 @@ function nombreItemPanier() {
 	var n = cart.length;
 	if (n==0){
 		$("#empty").css("display", "block");
+		$("#filled").css("display", "none");
 		$("#nombreItemPanier").css("display", "none");
 	}
 	else{
 		$("#nombreItemPanier").html(n);
 		$("#empty").css("display", "none");
+		$("#filled").css("display", "block");
 		$("#nombreItemPanier").css("display", "inline-block");
 	}
 };
@@ -292,7 +300,21 @@ $(function(){
 });
 
 
+// Afficher le panier
+$(function(){
+	$(document).on("click", ".toggleCart", function(e) {
+		console.log('clic');
+		$('.collectionList').slideToggle('slow');
+	})
+});
 
+
+// checkout
+$(function(){
+	$(document).on("click", "#checkout", function(e) {
+		alert(cart);
+	})
+});
 
 // changer le corps du testeur
 function Corps() {
@@ -348,7 +370,7 @@ $(function() {
 		$("#menu3 li").attr('style', '');
 		$(this).css('color', 'black');
 		codeFocus = $(this).attr("class");
-		getText();
+		getText( codeFocus );
 
 			//return codeFocus;
 	});
@@ -357,27 +379,29 @@ $(function() {
 
 
 
-function getText( el ) {
+function getText( codeFocus ) {
 	var currentContent = '';
 	var currentTitle = '';
 
-	$('[data-focus=true]').fadeOut('slow', function() {
+	currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
+	currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
+
+	console.log("\n\ncurrentTitle: " + currentTitle + "\ncurrentContent :" + currentContent)
+
+	$('[data-focus=true]').fadeOut('slow', function() {console.log(currentTitle)
+
+		// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
+		if ( currentTitle == currentContent ) { 
+			newLabel = tableau[codeFocus].nom;
+			$('[data-focus=true] > [name=testeurTextarea] span').empty().append( newLabel );
+		}
 
 		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 		$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
 		$('[data-focus=true] .ajouterFont').attr('data-font', codeFocus);
 		$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
 
-		currentTitle = $('[data-focus=true] > [name=testeurTextarea]').attr('title');
-		currentContent = $('[data-focus=true] > [name=testeurTextarea] span').text();
-
-		// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
-		tableau.filter(function (font) {
-			if (font.nom == currentContent) {
-				$('[data-focus=true] > [name=testeurTextarea] span').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
-				return font.nom == currentContent;
-			}
-		});
+		
 	});
 	$('[data-focus=true]').fadeIn('fast');
 }
@@ -391,7 +415,7 @@ $(function(){
 			var button = $('#addLine');
 			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
 			//var font = parcourirTableau(codeFocus);
-			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><button class="delete">&#10005;</button><img class="ajouterFont" data-font="' + codeFocus + '" src="./img/panier.png" /></div><div contenteditable="true" name="testeurTextarea" title="' + codeFocus + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
+			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><div class="btn-tester delete">Remove line</div><div class="ajouterFont btn-tester" data-font="' + codeFocus + '">Add to cart</div></div><div contenteditable="true" name="testeurTextarea" title="' + tableau[codeFocus].nom + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
 			$('#testeur').append(newTextarea);
 
 			button.appendTo("#testeur:last-child")

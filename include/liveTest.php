@@ -11,8 +11,8 @@
     <div id="testeur" class="noir" spellcheck="false">
         <div class="line clearfix" data-focus="true">
             <div class="options">
-                <button class="delete">&#10005;</button>
-                <img class="ajouterFont" data-font="C4G4" src="./img/panier.png" />
+                <div class="btn-tester delete">Remove Line</div>
+                <div class="ajouterFont btn-tester" data-font="C4G4">Add to cart</div>
             </div>
             <div    contenteditable="true" 
                     title="Panorama Regular" 

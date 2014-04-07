@@ -162,10 +162,13 @@ function rotation(id, angleDegres, nombreItems) {
 	
 	$("ul#circle_" + id + " li").click(function() {
 		var total_li = $("ul#circle_" + id + " li").size() / 2 + 1 ;
-		// // console.log("nb li du cercle " + id + " :" + total_li);		
+		// console.log("nb li du cercle " + id + " :" + total_li);		
 		var reverse = false;
 		var index = $(this).index();
 		if (id < 2) { index = index -1; }
+		// Décalage d'un item sur le cercle de graisse :
+		if (id == 1) { index = index +1; } // Pourquoi ?
+		// dunno
 		$("ul#circle_" + id).transition({ rotate: angleDegres * index - ( 360 / nombreItems * 2 ) * index }, 'slow');
 		
 		if (id != 2 ){ // sauf s'il s'agit des glyphes
@@ -186,10 +189,12 @@ function rotation(id, angleDegres, nombreItems) {
 			$(this).transition({ rotate: -angleDegres * index + ( 360 / nombreItems * 2 ) * index }, 'slow');
 		});
 		// Pour redresser la légende
+		/*
 		$("#legende_" + id).each(function() {
 			var target = $(this);
 			$(this).transition({ rotate: 180 }, 'slow');
 		});
+		*/
 
 	});
 	//// console.log("----");
@@ -209,6 +214,8 @@ $(window).keypress(function(e){
     	}
 	}
 });
+
+
 
 $(window).keydown(function(e){
 	evt = e.keyCode || e.which;
@@ -378,6 +385,7 @@ $(function() {
 	// clic cercle graisse
 	$("ul#circle_1 li").click(function() {
 		codeGraisse = $(this).attr("name");
+		// console.log(codeGraisse);
 		codeFocus = codeChasse + codeGraisse;
 		$("#resultat").attr("class", codeFocus );
 		$(this).removeAttr('class');
@@ -429,11 +437,11 @@ function sentinelle(){
 	$("#resultat").attr("class", codeFocus );
 	$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
 	
-	getText();
+	getText( codeFocus );
 
 	$("#menu3 li").attr('style', '');
 	$("#menu3 li." + codeFocus).css('color', 'white');
-	//$("ul.recepteurGlyphe li").fadeToggle();
+	// $("ul.recepteurGlyphe li").fadeToggle();
 }
 
 

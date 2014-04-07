@@ -5,16 +5,17 @@
 <title>Panorama</title>
 <link rel="stylesheet" type="text/css" href="css/url_fonts.php" />
 <link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo rand(); ?>" />
-<link rel="stylesheet" type="text/css" href="css/circleMenu.css" />
+<link rel="stylesheet" type="text/css" href="css/circleMenu.css?v=<?php echo rand(); ?>" />
 <link rel="stylesheet" type="text/css" href="css/font.css" />
 <link rel="stylesheet" type="text/css" href="css/italic.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/responsive.css?v=<?php echo rand(); ?>" />
+<script src="js/tableau.js?v=<?php echo rand(); ?>"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 <script src="js/circleMenu.js?v=<?php echo rand(); ?>"></script>
 <script src="js/interface.js?v=<?php echo rand(); ?>"></script>
 <script src="js/hoverCircles.js"></script>
-<script src="js/tableau.js?v=<?php echo rand(); ?>"></script>
 <script src="js/jquery.transit.min.js"></script>
 <script type="text/javascript" src="js/colorpicker.min.js"></script>
 
@@ -28,7 +29,7 @@
 
 </head>
 
-<body class="BGbleu">
+<body class="">
 
 
 <div id="wrap">

@@ -1,4 +1,10 @@
-<div id="ui_fonttesteur" class="clearfix">
+<div id="ui_fonttesteur" class="">
+
+	
+
+
+
+
 
 	<div class="btn">
 		<input id="defaultSlider" type="range" min="24" max="256" value="36">

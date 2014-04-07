@@ -1,0 +1,32 @@
+@media screen and (max-width: 1200px) {
+	#repere {
+		width: 50%;
+	}
+	#repere span {
+		font-size: 1.2em;
+		text-align: left;
+	}
+	#circle_0 {
+		background-size: 80%;
+	}
+	#circle_1 {
+		background-size: 100%;
+	}
+	#menuAjouter img {
+		display: none;
+	}
+	#menuAjouter {
+		margin: 0 auto;
+		width: 80%;
+	}
+	#menuAjouter p {
+		margin: 3px auto;
+		font-size: 80%;
+	}
+	#menuAjouter ul {
+		margin-top: 0px;
+	}
+	#menuAjouter li {
+		margin-bottom: 1px;
+	}
+}

@@ -31,23 +31,13 @@ html {
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
 
-body.home {
-    background-color: #1a1a1a;
-}
-
-body.home path {
-    opacity: 0;
-    -webkit-transition: all 500ms ease-out;
-}
-body.home:hover path {
-    opacity: 1;
-    -webkit-transition: all 900ms ease-out;
-}
-
 .enter:hover .explore {
     fill: red;
     cursor: pointer;
-    -webkit-transition: all 900ms ease-out;
+}
+.enter:hover .explore_title > path {
+    fill: white;
+    cursor: pointer;
 }
 
 body {
@@ -167,38 +157,39 @@ a:visited {
 
 #conteneurNavigator,
 #conteneurLiveTest {
-    float: right;
-    width: 85%;
+    height: 100%;
+    width: 100%;
 }
 
 #conteneurNavigator {
     overflow: hidden;
-    height:100%;
 }
 
 
 #menu_lateral {
     z-index: 100;
-    float: left;
-    position: fixed;
+    position: absolute;
     top: 0;
-    height: 100%;
-    max-width: 15%;
-    min-height: 100%;
-    min-width: 15%;
-    text-align: center;
+    left: 0;
+    right: 0;
     padding: 10px;
 }
 
 #logo {
-    min-height: 150px;
     background-image: url('../img/logo.png');
     background-position: 50%;
     background-repeat: no-repeat;
     margin-bottom: 10px;
+    width: 15%;
+    float: left;
+    margin-right: 10px;
+    height: 40px;
 }
 
-#menu {
+
+.BTN {
+    width: 20%;
+    min-width: 200px !important;
     cursor: pointer;
 }
 
@@ -207,11 +198,15 @@ a:visited {
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 0.1em;
-    position: relative
+    position: relative;
+    min-width: 15%;
+    margin-right: 10px;
+    display: inline-block;
 }
 
-#menu2 {
-    margin-top: 50px;
+#menu1, #menu2, #menu3, #collection, #ui_fonttesteur, #btn-fond, #btn-font {
+    margin-right: 10px;
+    float: left;
 }
 
 #menu2 li, .btn-2 {
@@ -219,6 +214,9 @@ a:visited {
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 0.1em;
+    min-width: 15%;
+    margin-right: 10px;
+    display: inline-block;
 }
 
 #menu li.on,
@@ -227,37 +225,51 @@ a:visited {
     color: #FFF;
     background-color: #FF1D25;
 }
-
+#menu2 { 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: -10px; 
+    background-color: white;
+    padding: 10px;
+}
 #menu2 li:hover {
     color: #FFF;
     background-color: #3FA9F5;
 }
 
 #menu3 { display:none; padding:5px 0 0 3px; cursor:pointer; }
+#menu3 ul { float: left; width: 220px; }
 #menu3 li {
-    width:16%;
+    width:12%;
     float:left;
-    text-align: center;
+    text-align: left;
     margin: 0;
     margin-bottom: 10px;
-    font-size: 12px;
-    padding:5px 0;
+    font-size: 14px;
     transition: color 300ms;
     -webkit-transition: color 300ms; /* Safari */
 }
 #menu3 li:hover {
-    color: white;
+    color: green;
 }
 
 #menu4 { display:none; }
 
 #collection {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
     text-align: left;
     padding: 10px;
+    min-width: 20%;
+    float: right;
+    display: inline-flex;
+    position: absolute;
+    right: 10px;
 }
+#collection ul {
+    display: none;
+    margin-top: 1em;
+}
+
 #collection li { 
     text-align: left;
 }
@@ -272,6 +284,10 @@ a:visited {
     padding: 8px 0;
     text-transform: uppercase;
     letter-spacing: 0.2em;
+}
+
+#collection h2 {
+    width: 50%;
 }
 
 #contenuPanier {
@@ -305,6 +321,9 @@ a:visited {
     display: none;
     font-size: 80%;
     font-style: italic;
+}
+#filled {
+    display: none;
 }
 
 #contenuPanier li {
@@ -378,19 +397,23 @@ a:visited {
     display: none;
     position: absolute;
     top: 0;
-    right: -40px;
+    left: -40px;
     width: 18px;
     padding: 10px 11px 10px 10px;
     min-height: 15px;
     cursor: pointer;
+    text-align: center;
+    background-color: #FFF;
+    color: #EB1D25;
 }
 
 .btnSupprimer:hover {
     background-color: #EB1D25;
+    color: white;
 }
 
 
-#contenuPanier li:hover .btnSupprimer {
+#contenuPanier ul a:hover li .btnSupprimer  {
     display: block;
 }
 
@@ -461,9 +484,9 @@ a.famille li:after {
 #conteneurLiveTest {
     display: none;
     position: relative;
-    height: calc(100% - 140px);
-    overflow-x: hidden;
-    padding-top: 140px;
+    /* height: calc(100% - 140px); */
+    /* overflow-x: hidden; */
+    /* padding-top: 140px; */
 }
 
 
@@ -507,7 +530,7 @@ a.famille li:after {
 
 #testeur {
     width:100%;
-    height: 80%;
+    height: 100%;
     outline: none;
     overflow: visible;
     position: relative;
@@ -613,62 +636,62 @@ a.famille li:after {
 }
 
 
-#addLine {
+#addLine, .btn-tester {
     background-color: red;
     padding: 10px 20px;
     border: 0px;
     color: white;
-    margin-top: 80px;
+    margin-top: 30px;
     cursor: pointer;
-    margin-left: 100px;
+    margin-left: 50px;
+    margin-bottom: 500px;
 }
-#addLine:hover {
+#addLine:hover, .btn-tester:hover {
     opacity: .9;
 }
 
+.btn-tester {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    float: left;
+}
+
 .line {
-    
+    position: relative;  
+    padding: 10px 0;
 }
 
 .options {
-    opacity: 0;
-    float: left;
-    margin-left: 40px;
+    position: absolute;
+    z-index: 1000;
+    top: -30px; 
+    left:-1000px;
     transition: all 500ms;
     -webkit-transition: all 500ms; /* Safari */
+    height: 100%;
 }
 
-.line:hover .options {
-    opacity: 0.3;
+.line[data-focus=true]:hover .options {
+    left:50px;
 }
 
-.line .options:hover {
-    opacity: 1;
+#checkout:hover,
+.toggleCart:hover {
+    color: #dc0a00;
+    cursor: pointer;
 }
 
 .delete {
-    background-color: red;
-    height: 16px;
-    width: 16px;
-    line-height: 10px;
-    color: white;
-    border-radius: 50%;
-    border: none;
-    font-size: 8px;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    margin-bottom: 10px;
-    margin-left: 1px;
-}
 
+}
+/*
 [data-focus] {
     border-right: 10px solid transparent;
 }
-
+*/
 [data-focus=true] {
-    border-right: 10px solid;
-    border-color: rgba(255,255,255,.4);
+    background-color: #f7f6f6;
     transition: border 500ms;
     -webkit-transition: border 500ms; /* Safari */
 }
