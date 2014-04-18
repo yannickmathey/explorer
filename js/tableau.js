@@ -156,7 +156,13 @@ console.log(cible);
         return tableau[cible].pack;
     }
     else {
-        return tableau[cible].nom;
+        if (cible instanceof Array) {
+            $.each( cible , function( index, value ) {
+              // return tableau[index].nom;
+            });
+        } else {
+            return tableau[cible].nom;
+        }
     }
 
 };

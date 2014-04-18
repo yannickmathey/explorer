@@ -3,6 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Panorama</title>
+
+<!--
 <link rel="stylesheet" type="text/css" href="css/url_fonts.php" />
 <link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo rand(); ?>" />
 <link rel="stylesheet" type="text/css" href="css/circleMenu.css?v=<?php echo rand(); ?>" />
@@ -10,14 +12,21 @@
 <link rel="stylesheet" type="text/css" href="css/italic.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/responsive.css?v=<?php echo rand(); ?>" />
+-->
+<link rel="stylesheet" type="text/css" href="src/style-min.css?v=<?php echo rand(); ?>" />
+
+<!--
 <script src="js/tableau.js?v=<?php echo rand(); ?>"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 <script src="js/circleMenu.js?v=<?php echo rand(); ?>"></script>
 <script src="js/interface.js?v=<?php echo rand(); ?>"></script>
-<script src="js/hoverCircles.js"></script>
 <script src="js/jquery.transit.min.js"></script>
 <script type="text/javascript" src="js/colorpicker.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="src/script.min.js?v=<?php echo rand(); ?>"></script>
 
 <script language="javascript">
     $(document).ready(function()
@@ -53,6 +62,18 @@
 
 
 <div id="javascriptKo">Warning :<br/> Javascript seems disabled on your browser.<br/>Please enable it.</div>
+
+
+<div class="about">
+    <div class="panneau gauche BGjaune"></div>
+    <div class="panneau droite BGjaune"></div>
+    <div class="panneau_contenu C4G1 blanc">
+        <p class="closeAbout">✕</p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    </div>
+    <p class="rouge openAbout">About</p>
+</div>
+
 
 </body>
 </html>

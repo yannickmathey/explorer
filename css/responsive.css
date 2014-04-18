@@ -29,4 +29,13 @@
 	#menuAjouter li {
 		margin-bottom: 1px;
 	}
+
+	.panneau_contenu {
+		padding: 1em;
+		padding-top: 3em;
+		top: 50px;
+		left: 15%;
+		right: 15%;
+		font-size: 2.5em;
+	}
 }

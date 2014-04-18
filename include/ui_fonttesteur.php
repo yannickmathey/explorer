@@ -1,12 +1,10 @@
 <div id="ui_fonttesteur" class="">
 
-	
+	<div class="btn-2 btn-left">
+		<span class="pa1 border borderBleu bleu BTN toggleItalic">Roman / Italic</span>
+	</div>
 
-
-
-
-
-	<div class="btn">
+	<div class="btn-left">
 		<input id="defaultSlider" type="range" min="24" max="256" value="36">
 		<span id="currentValue">201</span>
 
@@ -19,25 +17,24 @@
 				max: 500,
 				min: 0,
 				slide: function(event, ui) {
-//currentValue.html(ui.value);
-$("#testeur:last-child").css("font-size", value);
-$("#testeur:last-child").css("line-height", interlignage(value) + "px" );
-console.log(value);
-}
-});
-
+				//currentValue.html(ui.value);
+				$("#testeur:last-child").css("font-size", value);
+				$("#testeur:last-child").css("line-height", interlignage(value) + "px" );
+				console.log(value);
+			}
+		});
 		});
 		</script>
-
 	</div>
 
-	<div class="btn-2">
-		<span class="toggleItalic">Switch slant</span>
-	</div>
-</div>
+	
+
+
+
+
 
 <div id="btn-fond" class="btn-2 btn-left btn-color">
-	<span class="toggle" style="display: block;">Background color</span>
+	<span class="toggle" style="display: block !important; ">Background color <span class="preview"></span></span>
 	<div id="colorbackground" class="define_color toggle">
 		<div id="picker-wrapper-fond" class="picker-wrapper">
 			<div id="picker-fond"></div>
@@ -68,7 +65,7 @@ console.log(value);
 
 				$("#conteneurLiveTest").css('background-color', hex);
 				$("#fond").css('background-color', hex);
-				$("#btn-fond").css('border-left-color', hex);
+				$("#btn-fond .preview").css('background-color', hex);
 
 			});
 
@@ -77,7 +74,7 @@ console.log(value);
 </div>
 
 <div id="btn-font" class="btn-2 btn-left btn-color">
-	<span class="toggle" style="display: block;">Font color</span>
+	<span class="toggle" style="display: block !important; ">Font color <span class="preview"></span></span>
 	<div id="colorFont" class="define_color toggle">
 		<div id="picker-wrapper-font" class="picker-wrapper">
 			<div id="picker-font"></div>
@@ -107,7 +104,7 @@ console.log(value);
 					);
 
 				$('[data-focus=true] > [name=testeurTextarea]').css('color', hex);
-				$("#btn-font").css('border-left-color', hex);
+				$("#btn-font .preview").css('background-color', hex);
 				fontColor = hex;
 				console.log(fontColor);
 
@@ -115,6 +112,7 @@ console.log(value);
 
 		</script>
 	</div>
+</div>
 
 
 

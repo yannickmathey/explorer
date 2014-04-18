@@ -8,7 +8,10 @@
             <li id="btnLiveTest" class="mb1 border borderRouge rouge BTN">Live Test</li>
         </ul>
         <ul id="menu2">
-        	<li class="border borderBleu bleu BTN"><a href="#" class="toggleItalic">Roman / Italic</a></li>
+         
+            <div class="btn-2">
+                <span class="pa1 border borderBleu bleu BTN toggleItalic">Roman / Italic</span>
+            </div>
             <!-- <li class="mb1 border borderBleu bleu"><a href="#">Review cart</a></li> -->
         </ul>
         <div  id="menu3">
@@ -71,7 +74,7 @@
         </div>
 
         <div  id="menu4">
-            <?php // include 'include/ui_fonttesteur.php'; ?>
+            <?php include 'include/ui_fonttesteur.php'; ?>
         </div>
 
         <div id="collection">

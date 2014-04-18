@@ -209,7 +209,7 @@ $(window).keypress(function(e){
 	// // console.log(code);
 
 	if (displayLiveTest == false ) {
-		if (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 65 && e.keyCode <= 90  || e.keyCode >= 97 && e.keyCode <= 122) {
+		if (code >= 48 && code <= 57 || code >= 65 && code <= 90  || code >= 97 && code <= 122) {
     		$('#circleMenu span.conteneur').empty().append(alphaNum);
     	}
 	}
@@ -220,7 +220,7 @@ $(window).keypress(function(e){
 $(window).keydown(function(e){
 	evt = e.keyCode || e.which;
 	switch( evt ) {
-        case 38:
+        case 37:
         var angleDegres = 45;
         var nombreItems = 8;
         var id = 1;
@@ -239,7 +239,7 @@ $(window).keydown(function(e){
 		sentinelle();
 		break;
 
-    	case 40:
+    	case 39:
     	var angleDegres = 45;
     	var nombreItems = 8;
     	var id = 1;
@@ -258,7 +258,7 @@ $(window).keydown(function(e){
 		sentinelle();
 		break;
 
-        case 39:
+        case 38:
         var angleDegres = 60;
         var nombreItems = 6;
         var id = 0;
@@ -277,7 +277,7 @@ $(window).keydown(function(e){
 		sentinelle();
 		break;
 
-        case 37:
+        case 40:
         var angleDegres = 60;
         var nombreItems = 6;
         var id = 0;
@@ -440,10 +440,10 @@ function sentinelle(){
 	getText( codeFocus );
 
 	$("#menu3 li").attr('style', '');
-	$("#menu3 li." + codeFocus).css('color', 'white');
+	$("#menu3 li span").removeClass('bleu');
+	$("#menu3 li." + codeFocus + " span").addClass('bleu');
 	// $("ul.recepteurGlyphe li").fadeToggle();
 }
-
 
 
 
