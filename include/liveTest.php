@@ -12,7 +12,7 @@
         <div class="line clearfix" data-focus="true">
             <div class="options">
                 <div class="btn-tester delete">Remove Line</div>
-                <div class="ajouterFont btn-tester" data-font="C4G4">Add to cart</div>
+               
             </div>
             <div    contenteditable="true" 
                     title="Panorama Regular" 
@@ -27,3 +27,5 @@
 
 
 </div><!-- END #conteneurLiveTest -->
+
+

@@ -16,7 +16,7 @@
             <li name="C1" class="C1G4"><span class="conteneur rouge">A</span></li>
             <li name="C2" class="C2G4"><span class="conteneur rouge">A</span></li>
             <li name="C3" class="C3G4"><span class="conteneur rouge">A</span></li>
-        <span class="legende legende_0"><div id="legende_0">width</div></span>
+        <span class="legende legende_0"><div id="legende_0">WIDTH</div></span>
         </ul>
 
         <ul id="circle_1" class="circleMenu recepteurGlyphe" name="thickness">
@@ -29,7 +29,7 @@
             <li name="G1" class="C4G1"><span class="conteneur bleu">A</span></li>
             <li name="G2" class="C4G2"><span class="conteneur bleu">A</span></li>
             <li name="G3" class="C4G3"><span class="conteneur bleu">A</span></li>
-        <span class="legende legende_1"><div id="legende_1">thickness</div></span>
+        <span class="legende legende_1"><div id="legende_1">WEIGHT</div></span>
         </ul>
 
         <ul id="circle_2" class="circleMenu glyphes">
@@ -37,15 +37,6 @@
         </ul>
 
         <div id="resultat" data-font="addFont" class="C4G4">
-            <div id="menuAjouter">
-                <img src="img/fleche.png"/>
-                <p class="vert">Add to cart</p>
-                <ul>
-                    <li name="addCart" class="ajouterFont BGvert mb1 blanc" data-font="C4G4" >Add style</li>
-                    <li name="addCart" class="ajouterSlants BGvert mb1 blanc" data-font="C4G4" >Add style + italic</li>
-                    <li name="addCart" class="ajouterFamille BGvert mb1 blanc" data-font="C4G4" >Add family</li>
-                </ul>
-            </div>
             <span class="conteneur rouge">A</span>
         </div><!-- END #resultat -->
 

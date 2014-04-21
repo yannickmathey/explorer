@@ -30,6 +30,7 @@ li { text-align:center; line-height:1em; }
 	text-align:right;
 	float: right;
 	overflow: hidden;
+	pointer-events: none;
 }
 #repere span {
 	vertical-align:middle;

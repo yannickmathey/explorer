@@ -1,5 +1,3 @@
-cart = JSON.parse( localStorage.cart || '[]' );
-cartTEMP = [];
 fontColor = "black";
 codeFocus = "C4G4";
 displayLiveTest = false;
@@ -9,34 +7,27 @@ italic = false;
 
 //fonction d'initialisation
 $(document).ready(function () {
-	nombreItemPanier();
 	chasse = 'C1';
 	graisse = 'G1';
 	corps = 40;
-	var panier = {};
 	displayScreen();
 	Corps();
 	define_color();
 	setTimeout(function() {
 		$('#rideau').fadeOut();
 	}, 1000);
-	/*
-	if ( cart != '' ) {
-		remplirPanier( cart , 'font' );
-	}
-	*/
 });
 
 
 
 
 function glissementMenu() {
-	var $glisseMenu = $('#menu_lateral');
+	var $glisseMenu = $('.n-menu');
 
-	if (displayLiveTest ) {
-		$('#menu_lateral').css('position', 'relative');
+	if ( displayLiveTest ) {
+		$('.n-menu').css('position', 'relative');
 	} else {
-		$('#menu_lateral').css('position', 'absolute');
+		$('.n-menu').css('position', 'absolute');
 	}
 
 	$glisseMenu.animate({
@@ -54,36 +45,36 @@ function glissementMenu() {
 };
 
 function displayScreen() {
-	$("#menu1 li").click(function(event) {
+	$("#menu1 td").click(function(event) {
 
 		var $target = $(event.target);
 
-		if ( ($target).is('#btnLiveTest') ) {
+		if ( ($target).is('#btnLiveTest') && !displayLiveTest ) {
 			displayLiveTest = true;
 			glissementMenu();
 
 			$('#conteneurNavigator').fadeOut('fast',
 				function() {
 					$('#conteneurLiveTest').fadeIn(900);
-					$("#menu1 li.on").delay(10000).removeClass('on');
-					$("#menu1 li#btnLiveTest").addClass('on');
-					$("#menu3").css("display","inline");
-					$("#menu4").css("display","block");
+					$("#menu1 td.on").delay(10000).removeClass('on');
+					$("#menu1 td#btnLiveTest").addClass('on');
+					$("#menu3").css("display","inline-table");
+					$("#menu4").css("display","inline-table");
 					$("#menu2").css("display","none");
 				}
 				);
 		}
 
-		else {
+		if ( ($target).is('#btnNavigator') && displayLiveTest ) {
 			displayLiveTest = false;
 			glissementMenu();
 
 			$('#conteneurLiveTest').fadeOut('fast',
 				function() {
 					$('#conteneurNavigator').fadeIn(900);
-					$("#menu1 li.on").delay(10000).removeClass('on');
-					$("#menu1 li#btnNavigator").addClass('on');
-					$("#menu2").css("display","inline");
+					$("#menu1 td.on").delay(10000).removeClass('on');
+					$("#menu1 td#btnNavigator").addClass('on');
+					$("#menu2").css("display","inline-table");
 					$("#menu3").css("display","none");
 					$("#menu4").css("display","none");
 				}
@@ -93,171 +84,7 @@ function displayScreen() {
 	});
 };
 
-function nombreItemPanier() {
-	var n = cart.length;
-	if (n==''){
-		$("#empty").css("display", "block");
-		$("#filled").css("display", "none");
-		$("#nombreItemPanier").css("display", "none");
-	}
-	else{
-		$("#nombreItemPanier").html(n);
-		$("#empty").css("display", "none");
-		$("#filled").css("display", "block");
-		$("#nombreItemPanier").css("display", "inline-block");
-	}
-};
 
-// Ajouter current font
-$(function(){
-	$(document).on("click", ".ajouterFont", function(e) {
-
-		var content = $(this).attr("data-font");
-
-		remplirPanier(content, "font");
-		nombreItemPanier();
-		//console.log(cart);
-
-	});
-});
-
-// Ajouter both slants
-$(function(){
-	$(document).on("click", ".ajouterSlants", function(e) {
-
-		var content = $(this).attr("data-font");
-
-		remplirPanier(content, "slants");
-		nombreItemPanier();
-		//console.log(cart);
-
-	});
-});
-
-// Ajouter pack
-$(function(){
-	$(document).on("click", ".ajouterFamille", function(e) {
-
-		var content = $(this).attr("data-font");
-
-		remplirPanier(content, "famille");
-		nombreItemPanier();
-		//console.log(cart);
-
-	});
-});
-
-
-function remplirPanier(content, type) {
-
-	if (content != "" ) {
-
-		cartTEMP = [];
-
-		if ( type == "slants" ) {
-
-			content = content.substr(0,4);
-			if ( $.inArray(content, cart) == -1 ) {
-				cart.push( content );
-			}
-			else {
-				console.log(content);
-				$("#contenuPanier ul a[name=" + content + "]").css('background-color', 'red').slideUp(800);
-			}
-			cartTEMP.push( content );
-
-			content += "I";
-
-			if ( $.inArray(content, cart) == -1 ) {
-				cart.push( content );
-			}
-			else {
-				console.log(content);
-				$("#contenuPanier ul a[name=" + content + "]").css('background-color', 'red').slideUp(800);
-			}
-			//cartTEMP.push( content );
-
-			//cart.push( content+"I" );
-			console.log("addSlant");
-
-		}
-
-		if ( type == "famille" ) {
-
-			for (var i = 1; i <= 8; i++) {
-				laFamille = content.substr(0,2) + "G" + i;
-				cart.push( laFamille );
-				cart.push( laFamille + "I" );
-				cartTEMP.push( laFamille );
-				cartTEMP.push( laFamille + "I" );
-			};
-		}
-
-		if ( $.inArray(content, cart) == -1 ) {
-			cart.push( content );
-			cartTEMP.push( content );
-		}
-		else {
-			$("#contenuPanier ul a[name=" + content + "]").css('background-color', 'red').slideUp(800);
-		}
-
-		cart = cart.filter(function(e){return e});
-		var removeDoublons = [];
-		$.each(cart, function(i, el){
-		    if($.inArray(el, removeDoublons) === -1) removeDoublons.push(el);
-		});
-		cart = removeDoublons;
-
-		localStorage.cart = JSON.stringify( cart );
-
-
-	}
-	//$("#contenuPanier ul").empty();
-
-	for ( var i = 0; i < cartTEMP.length; i++ ) {
-
-			if ( type == 'slants' ) {
-				if(i > 1) {
-            		return false;
-            	}
-            	else {
-            		cartTEMP[i] = cartTEMP[i].substr(0,4);
-					$("#contenuPanier ul").append("<a class='slants' href='#' name='" + cartTEMP[i] + "'><li class='nomVarPano '>" + parcourirTableau(cartTEMP[i], 'famille') + "<span class='btnSupprimer' id='btn-" + cartTEMP[i] + "'>✕</span></li></a>");
-					return false;
-				}
-				//cartTEMP = [];
-			}
-			if ( type == 'famille' ) {
-				if(i > 0) {
-            		return false;
-            	}
-            	else {
-					$("#contenuPanier ul").append("<a class='famille' href='#' name='" + cartTEMP[i] + "'><li class='nomVarPano '>" + parcourirTableau(cartTEMP[i], 'famille') + "<span class='btnSupprimer' id='btn-" + cartTEMP[i] + "'>✕</span></li></a>");
-					return false;
-				}
-				//cartTEMP = [];
-			}
-			else { 
-				$("#contenuPanier ul").append("<a href='#' name='" + cartTEMP[i] + "'><li class='nomVarPano'>" + parcourirTableau(cartTEMP[i]) + "<span class='btnSupprimer' id='btn-" + cartTEMP[i] + "'>✕</span></li></a>");
-				//cartTEMP = [];
-			}
-			
-
-
-
-		//$("#contenuPanier ul").append("<a href='#' name='" + cart[i] + "'><li class='nomVarPano'>" + parcourirTableau(cart[i]) + "<span class='btnSupprimer' id='btn-" + cart[i] + "'>✕</span></li></a>");
-
-		// Nettoyer les doublons
-
-	}
-	
-
-
-
-	// console.log("après ajout = " + cart );
-	//$("#contenuPanier ul").html(contenuPanier + "<a href='#' name='" + id + "'><li class='nomVarPano'>" + parcourirTableau(id) + "<span class='btnSupprimer' id='btn-" + id + "'>✕</span></li></a>");
-
-};
 
 // toggle italic
 $(document).on("click", ".toggleItalic", function(e) {
@@ -278,7 +105,7 @@ $(document).on("click", ".toggleItalic", function(e) {
 
 
 function define_color() {
-	$('.btn-color span').on('click', function(){
+	$('.btn-color .action').on('click', function(){
 		$target = $(this).parent();
 
 		$target.find('.toggle').toggle().toggleClass('clearfix');
@@ -294,60 +121,7 @@ function define_color() {
 }
 
 
-// supprimer un item dans le panier
-$(function(){
-	$(document).on("click", "span.btnSupprimer", function(e) {
 
-		target = $(this).parents().eq(1);
-		// console.log('target' + target);
-
-		var itemtoRemove = target.attr("name");
-
-		if ( target.hasClass('slants') ) {
-			itemtoRemove = itemtoRemove.substr(0,4);
-			cart = $.grep(cart, function(value) { return value !== itemtoRemove; });
-			cart = cart.filter(function(e){return e});
-			itemtoRemove = itemtoRemove +="I";
-			cart = $.grep(cart, function(value) { return value !== itemtoRemove; });
-			cart = cart.filter(function(e){return e});
-		}
-		if ( target.hasClass('famille') ) {
-			for (var i = 1; i <= 8; i++) {
-				itemtoRemove = itemtoRemove.substr(0,2) + "G" + i;
-				cart = $.grep(cart, function(value) { return value !== itemtoRemove; });
-				cart = $.grep(cart, function(value) { return value !== itemtoRemove + 'I'; });
-				cart = cart.filter(function(e){return e});			};
-		}
-		else {
-			cart = $.grep(cart, function(value) { return value !== itemtoRemove; });
-			cart = cart.filter(function(e){return e});
-		}
-		
-		// console.log("après remove = " + cart );
-		$(this).parents().eq(1).css('background-color', 'red').slideUp(800);
-
-		// remplirPanier();
-		nombreItemPanier();
-	}
-	);
-});
-
-
-// Afficher le panier
-$(function(){
-	$(document).on("click", ".toggleCart", function(e) {
-		console.log('clic');
-		$('.collectionList').slideToggle('slow');
-	})
-});
-
-
-// checkout
-$(function(){
-	$(document).on("click", "#checkout", function(e) {
-		alert(cart);
-	})
-});
 
 // changer le corps du testeur
 function Corps() {
@@ -421,7 +195,7 @@ function getText( codeFocus ) {
 
 	console.log("\n\ncurrentTitle: " + currentTitle + "\ncurrentContent :" + currentContent)
 
-	$('[data-focus=true]').fadeOut('slow', function() {console.log(currentTitle)
+	$('[data-focus=true]').fadeOut('fast', function() {console.log(currentTitle)
 
 		// Si le texte a été modifié, laisser tel quel, sinon afficher le nom de la font séléctionnée
 		if ( currentTitle == currentContent ) { 
@@ -448,7 +222,7 @@ $(function(){
 			var button = $('#addLine');
 			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
 			//var font = parcourirTableau(codeFocus);
-			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><div class="btn-tester delete">Remove line</div><div class="ajouterFont btn-tester" data-font="' + codeFocus + '">Add to cart</div></div><div contenteditable="true" name="testeurTextarea" title="' + tableau[codeFocus].nom + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
+			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><div class="btn-tester delete">Remove line</div></div><div contenteditable="true" name="testeurTextarea" title="' + tableau[codeFocus].nom + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
 			$('#testeur').append(newTextarea);
 
 			button.appendTo("#testeur:last-child")
@@ -518,14 +292,14 @@ $(function(){
 		$(' .gauche ').animate({
 			'top': '0',
 			'opacity': '0',
-			'left': '-1000px'
+			'left': '-2000px'
 			},
 			1000, function() {}
 		);
 		$(' .droite ').animate({
 			'bottom': '0',
 			'opacity': '0',
-			'right': '-1000px'
+			'right': '-2000px'
 			},
 			1000, function() {}
 		);

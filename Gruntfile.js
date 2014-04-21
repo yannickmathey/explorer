@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     cssmin: {
     combine: {
       files: {
-        'src/style-min.css': ['css/style.css', 'css/circleMenu.css', 'css/font.css', 'css/italic.css', 'css/jquery-ui.css', 'css/responsive.css']
+        'src/style-min.css': ['css/style.css', 'css/circleMenu.css', 'css/font.css', 'css/italic.css', 'css/jquery-ui.css', 'css/responsive.css', 'css/new.css']
       }
     }
   },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         tasks: ['uglify']
       },
       styles: {
-        files: '**/*.scss',
+        files: '**/*.css',
         tasks: ['cssmin']
       }
     }

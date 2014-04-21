@@ -1,0 +1,150 @@
+.n-menu {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 380px;
+	z-index: 99999;
+}
+
+.pa0 {
+	padding: 0!important;
+}
+
+.n-logo {
+	background-image: url('../img/logo.png');
+	background-position: 50%;
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 40px;
+}
+
+.n-border {
+	border: 1px solid #dc0a00;
+}
+.border-top {
+	border-top: 1px solid #dc0a00;
+}
+.border-right {
+	border-right: 1px solid #dc0a00;
+}
+.border-bottom {
+	border-bottom: 1px solid #dc0a00;
+}
+.border-left {
+	border-left: 1px solid #dc0a00;
+}
+
+.n-wrap-main-menu {
+	width: 100%;
+}
+
+.n-wrap-main-menu td {
+	padding: 1em;
+}
+
+.n-wrap-main-menu tr {
+	width: 100%;
+}
+
+.n-btn {
+	width: 50%;
+	padding: 10px;
+	padding-bottom: 8px;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	color: #dc0a00;
+	letter-spacing: .05em;
+}
+
+.n-btn-red:hover,
+.n-btn-red.on {
+	background-color: #dc0a00;
+	color: white;
+	cursor: pointer;
+}
+
+.n-txt-left {
+	text-align: left;
+}
+
+.n-txt-center {
+	text-align: center;
+}
+
+.n-infos {
+	font-size: 1.2em;
+	line-height: 1.6;
+	color: #dc0a00 !important;
+}
+
+.n-btn-blue {
+	color: #0078f5;
+	padding: 2em;
+	padding-bottom: 1.8em;
+	font-size: 1.2em;
+}
+.n-btn-blue:hover {
+	background-color: #0078f5;
+	color: white;
+	cursor: pointer;
+}
+
+.n-btn-green:hover {
+	background-color: #3a844a;
+	color: white;
+	cursor: pointer;
+}
+
+#conteneurLiveTest {
+	margin-top: 40px;
+}
+
+
+.options {
+	position: absolute;
+	z-index: 1000;
+	top: 50px; 
+	margin-top: -30px;
+	right:-1000px;
+	transition: all 500ms;
+	-webkit-transition: all 500ms; /* Safari */
+}
+
+.line[data-focus=true]:hover .options {
+	right:50px;
+}
+
+.define_color {
+	background-color: white;
+	top: 62px;
+	left: 10px;
+	width: 380px;
+	height: 135px;
+	position: fixed;
+}
+
+#defaultSlider {
+	width: 80%;
+}
+
+
+#menu3 {
+	position: absolute;
+	top: 62px;
+	left: 410px;
+}
+
+
+.panneau_contenu {
+	line-height: 1.4;
+}
+
+
+.credits {
+	position: fixed;
+	bottom: 10px;
+	left: 20px;
+	font-size:12px; 
+	letter-spacing: .05em;
+}

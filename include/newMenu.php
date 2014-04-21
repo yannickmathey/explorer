@@ -1,26 +1,50 @@
-<div id="menu_lateral" class="BGblanc clearfix">
-    <div class="wrap-menu left">
-    <a href="./"><div id="logo" class="border borderRouge"></div></a>
+<div class="n-menu">
+	<a href="./"><div class="n-logo n-border"></div></a>
+	<div class="n-border">
+		<table class="n-wrap-main-menu" cellspacing="0">
+			<tr id="menu1" class="n-main-menu">
+				<td id="btnNavigator" class="n-btn n-btn-red C3G4 n-txt-center border-bottom on">font navigator</td>
+				<td id="btnLiveTest" class="n-btn n-btn-red C3G4 n-txt-center border-bottom border-left">live test</td>
+			</tr>
+			
+			<tr>
+				<table id="menu2" class="n-wrap-main-menu no-border-top" cellspacing="0">
+					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman / Italic</td></tr>
+					<tr>
+						<td class="n-infos">
+							<p>- Type Any letter to preview it</p>
+							<p>- Use  to change width/weight</p>
+						</td>
+					</tr>
+				</table>
+			</tr>
 
-    <div id="menu" class="clearfix">
-    	<ul id="menu1" class="clearfix">
-            <li id="btnNavigator" class="mb1 on border borderRouge rouge left BTN">Navigator</li>
-            <li id="btnLiveTest" class="mb1 border borderRouge rouge BTN right">Live Test</li>
-        </ul>
-        <div id="menu2" class="borderRouge rouge">
-            <div class="pa1 border borderBleu bleu BTN toggleItalic">Roman / Italic</div>
-            <div>Type Any letter to preview it</div>
-            <div>Use <span class="icon glyphicon-play"></span> to change width/weight</div>
-        </div>
-        <div  id="menu4">
-            <?php include 'include/ui_fonttesteur.php'; ?>
-        </div>
-        
-    
+			<tr>
+				<table id="menu4" class="n-wrap-main-menu no-border-top" cellspacing="0">
+					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman / Italic</td></tr>
+					<tr>
+						<td class="pa0">
+							<?php include 'include/ui_fonttesteur.php'; ?>
+						</td>
+					</tr>
+				</table>
+			</tr>
 
-    </div>
-    </div>
-    <div  id="menu3" class="left">
+			<table class="n-wrap-main-menu border-top" cellspacing="0">
+				<tr class="n-main-menu">
+					<td class="n-btn n-btn-green C3G4 n-txt-center openAbout">About</td>
+					<td class="n-btn n-btn-red C3G4 n-txt-center border-left pa0">
+						<a href="https://www.productiontype.com/family/panorama" style="display: block;">
+							Buy
+						</a>
+					</td>
+				</tr>
+			</table>
+		</table>
+	</div>
+</div>
+
+<div  id="menu3" class="left clearfix">
             <ul class="">
                 <li class="C6G8"><span class="menu3 rouge">P</span></li>
                 <li class="C6G7"><span class="menu3 rouge">P</span></li>
@@ -79,6 +103,3 @@
             </ul>
         </div>
 
-
-
-</div>

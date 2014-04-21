@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/italic.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/responsive.css?v=<?php echo rand(); ?>" />
+<link rel="stylesheet" type="text/css" href="css/new.css?v=<?php echo rand(); ?>" />
 -->
 <link rel="stylesheet" type="text/css" href="src/style-min.css?v=<?php echo rand(); ?>" />
 
@@ -44,7 +45,8 @@
 <div id="wrap">
 
 <?php
-    include 'include/menu.php';
+    // include 'include/menu.php';
+    include 'include/newMenu.php';
     include 'include/navigator.php';
     include 'include/liveTest.php';
 ?>
@@ -65,13 +67,13 @@
 
 
 <div class="about">
-    <div class="panneau gauche BGjaune"></div>
-    <div class="panneau droite BGjaune"></div>
+    <div class="panneau gauche BGvert"></div>
+    <div class="panneau droite BGvert"></div>
     <div class="panneau_contenu C4G1 blanc">
         <p class="closeAbout">✕</p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        <p>Panorama is not a family, it is a typeface system. It pushes beyond the usual barriers that limit familial proportions, elaborating a core design into an expansive gamut of widths (six) and weights (eight).  The project began in 2003, exploring the malleability of typographic shapes. How far can one stretch a face before it breaks from its basic nature as a quiet, congenial sans? Levée let his imagination (and mechanical automation) wander, interrupting only when necessary to correct a curve or maintain the spirit of the original design. The result is an unusual kit of parts. An arsenal of nearly boundless possibilities, from ethereal thin to blinding black, with an uncommonly handy series of steps in between.</p>
+        <p class="credits">Design & code: <a href="https://twitter.com/_____________y" target="_blank">Yannick Mathey</a>.</p>
     </div>
-    <p class="rouge openAbout">About</p>
 </div>
 
 
