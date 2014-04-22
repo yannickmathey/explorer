@@ -9,11 +9,11 @@
 			
 			<tr>
 				<table id="menu2" class="n-wrap-main-menu no-border-top" cellspacing="0">
-					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman / Italic</td></tr>
+					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman <span class="glyphicon glyphicon-double-arrow rouge"></span> Italic</td></tr>
 					<tr>
 						<td class="n-infos">
-							<p>- Type Any letter to preview it</p>
-							<p>- Use  to change width/weight</p>
+							<p><span class="glyphicon glyphicon-triangle"></span>  Type Any letter to preview it</p>
+							<p><span class="glyphicon glyphicon-triangle"></span>  Use <span class="glyphicon glyphicon-right-arr"></span> <span class="glyphicon glyphicon-up-arr"></span> <span class="glyphicon glyphicon-right-arr"></span> <span class="glyphicon glyphicon-bottom-arr"></span> to change width/weight</p>
 						</td>
 					</tr>
 				</table>
@@ -21,7 +21,7 @@
 
 			<tr>
 				<table id="menu4" class="n-wrap-main-menu no-border-top" cellspacing="0">
-					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman / Italic</td></tr>
+					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman <span class="glyphicon glyphicon-double-arrow rouge"></span> Italic</td></tr>
 					<tr>
 						<td class="pa0">
 							<?php include 'include/ui_fonttesteur.php'; ?>

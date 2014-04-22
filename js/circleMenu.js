@@ -374,7 +374,7 @@ $(function() {
 			$('[data-focus=true] [name=addCart]').attr('data-font', codeFocus);
 			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");
-		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
+		$("#repere span").empty().append(parcourirTableau(codeFocus) + "  <b class='glyphicon glyphicon-triangle rouge'></b>");
 		$('[data-focus=true] > [name=testeurTextarea]').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
 		//changer class du li cliqué
 
@@ -410,7 +410,7 @@ $(function() {
 			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
 			$('[data-focus=true] [name=addCart]').attr('data-font', codeFocus);
 			$("[data-focus=true] > [name=testeurTextarea]").attr('title', parcourirTableau(codeFocus));
-		$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
+		$("#repere span").empty().append(parcourirTableau(codeFocus) + "  <b class='glyphicon glyphicon-triangle rouge'></b>");
 		$("#nomVariante").empty().append(parcourirTableau(codeFocus) + " ");		
 		$('[data-focus=true] > [name=testeurTextarea]').empty().append('<span>' + parcourirTableau(codeFocus) + '</span>');
 		//changer class du li cliqué
@@ -435,7 +435,7 @@ function sentinelle(){
 	});
 	codeFocus = currentWidth + currentThickness;
 	$("#resultat").attr("class", codeFocus );
-	$("#repere span").empty().append(parcourirTableau(codeFocus) + " ");
+	$("#repere span").empty().append(parcourirTableau(codeFocus) + "  <b class='glyphicon glyphicon-triangle rouge'></b>");
 	
 	getText( codeFocus );
 

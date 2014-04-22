@@ -4,7 +4,7 @@
     <div id="circleMenu">
 
 
-    <div id="repere"><p> <span>Panorama Regular</span></p></div>
+    <div id="repere"><p> <span>Panorama Regular <b class="glyphicon glyphicon-triangle rouge"></b></span></p></div>
 
 
 
@@ -16,7 +16,7 @@
             <li name="C1" class="C1G4"><span class="conteneur rouge">A</span></li>
             <li name="C2" class="C2G4"><span class="conteneur rouge">A</span></li>
             <li name="C3" class="C3G4"><span class="conteneur rouge">A</span></li>
-        <span class="legende legende_0"><div id="legende_0">WIDTH</div></span>
+        <span class="legende legende_0"><div id="legende_0"><span class="glyphicon glyphicon-triangle-left rouge"></span> WIDTH</div></span>
         </ul>
 
         <ul id="circle_1" class="circleMenu recepteurGlyphe" name="thickness">
@@ -29,7 +29,7 @@
             <li name="G1" class="C4G1"><span class="conteneur bleu">A</span></li>
             <li name="G2" class="C4G2"><span class="conteneur bleu">A</span></li>
             <li name="G3" class="C4G3"><span class="conteneur bleu">A</span></li>
-        <span class="legende legende_1"><div id="legende_1">WEIGHT</div></span>
+        <span class="legende legende_1"><div id="legende_1"><span class="glyphicon glyphicon-triangle-left bleu"></span> WEIGHT</div></span>
         </ul>
 
         <ul id="circle_2" class="circleMenu glyphes">

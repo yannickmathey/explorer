@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("../fonts/prodymbols-regular.eot");
+  src: url("../fonts/prodymbols-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/prodymbols-regular.woff") format("woff");
+}
+.glyphicon {
+  position: relative;
+  top: 0px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings" !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.glyphicon-double-arrow:before {
+  content: "\27f7";
+}
+
+.glyphicon-left-arr:before {
+  content: "\2190";
+}
+
+.glyphicon-up-arr:before {
+  content: "\2191";
+}
+
+.glyphicon-right-arr:before {
+  content: "\2192";
+}
+
+.glyphicon-bottom-arr:before {
+  content: "\2193";
+}
+
+.glyphicon-cross:before {
+  content: "\e014";
+}
+
+
+.glyphicon-triangle:before {
+  content: "\25B6";
+}
+
+
+.glyphicon-triangle-left:before {
+  content: "\25C0";
+}
