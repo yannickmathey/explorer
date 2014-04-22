@@ -172,11 +172,11 @@ function Corps() {
 // changer le style au clic du menu3
 $(function() {
 
-	$("#menu3 li span").on('click',function() {
+	$("#menu3 li").on('click',function() {
 
 		$("#menu3 li span").removeClass('bleu');
-		$(this).addClass('bleu');
-		codeFocus = $(this).parent().attr("class");
+		$("span", this).addClass('bleu');
+		codeFocus = $(this).attr("class");
 		getText( codeFocus );
 
 			//return codeFocus;

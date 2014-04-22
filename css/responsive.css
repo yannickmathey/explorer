@@ -38,4 +38,13 @@
 		right: 15%;
 		font-size: 2.5em;
 	}
+	#circleMenu {
+		margin-right: 10%;
+	}
+	#resultat {
+		font-size: 600%;
+	}
+	.recepteurGlyphe {
+		font-size: 300%;
+	}
 }

@@ -105,11 +105,27 @@
 	position: absolute;
 	z-index: 1000;
 	top: 50px; 
-	margin-top: -30px;
+	margin-top: -33px;
 	right:-1000px;
 	transition: all 500ms;
 	-webkit-transition: all 500ms; /* Safari */
 }
+
+.btn-tester {
+	padding-top: 12px;
+}
+
+.action {
+	cursor: pointer;
+}
+
+.btn-tester:hover,
+#addLine:hover {
+	background-color: white;
+	color: #dc0a00;
+	border: 1px solid #dc0a00;
+}
+
 
 .line[data-focus=true]:hover .options {
 	right:50px;
