@@ -265,6 +265,8 @@ $(function(){
 // about open
 $(function(){
 	$(document).on("click", ".openAbout", function(e) {
+		$(' .about ').show();
+		$(' .panneau_contenu ').hide();
 		$(' .gauche ').animate({
 			'top': '0',
 			'opacity': '1',
@@ -277,7 +279,7 @@ $(function(){
 			'opacity': '1',
 			'right': '0'
 		},
-		1000, function() {
+		800, function() {
 			$(' .panneau_contenu ').slideDown( 'slow' );
 		}
 		);
@@ -288,6 +290,7 @@ $(function(){
 // about close
 $(function(){
 	$(document).on("click", ".closeAbout", function(e) {
+		
 		$(' .panneau_contenu ').css( 'display', 'none' );
 		$(' .gauche ').animate({
 			'top': '0',
@@ -301,7 +304,9 @@ $(function(){
 			'opacity': '0',
 			'right': '-2000px'
 			},
-			1000, function() {}
+			1000, function() {
+				$(' .about ').hide();
+			}
 		);
 	})
 });

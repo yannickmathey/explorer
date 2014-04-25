@@ -169,6 +169,8 @@ function rotation(id, angleDegres, nombreItems) {
 		// Décalage d'un item sur le cercle de graisse :
 		if (id == 2) { index = index +1; } // Pourquoi ?
 		// dunno
+
+		// $("ul#circle_" + id).stop();
 		$("ul#circle_" + id).transition({ rotate: angleDegres * index - ( 360 / nombreItems * 2 ) * index }, 'slow');
 		
 		if (id != 2 ){ // sauf s'il s'agit des glyphes
@@ -186,6 +188,7 @@ function rotation(id, angleDegres, nombreItems) {
 
 		// Pour redresser les elements li
 		$("ul#circle_" + id + " li").each(function() {
+			// $(this).stop();
 			$(this).transition({ rotate: -angleDegres * index + ( 360 / nombreItems * 2 ) * index }, 'slow');
 		});
 		// Pour redresser la légende
@@ -227,8 +230,10 @@ $(window).keydown(function(e){
         indexThickness++;
         
 
+        // $("ul#circle_" + id).stop();
         $("ul#circle_" + id).transition({ rotate: angleDegres * indexThickness - ( 360 / nombreItems * 2 ) * indexThickness }, 'slow');
         $("ul#circle_" + id + " li").each(function() {
+        	// $(this).stop();
         	$(this).transition({ rotate: -angleDegres * indexThickness + ( 360 / nombreItems * 2 ) * indexThickness }, 0);
         });
 
@@ -246,8 +251,10 @@ $(window).keydown(function(e){
         indexThickness--;
         
     	
+    	// $("ul#circle_" + id).stop();
     	$("ul#circle_" + id).transition({ rotate: angleDegres * indexThickness - ( 360 / nombreItems * 2 ) * indexThickness }, 'slow');
         $("ul#circle_" + id + " li").each(function() {
+        	// $(this).stop();
         	$(this).transition({ rotate: -angleDegres * indexThickness + ( 360 / nombreItems * 2 ) * indexThickness }, 0);
         });
 
@@ -265,8 +272,10 @@ $(window).keydown(function(e){
         indexWidth++;
         
 
+        // $("ul#circle_" + id).stop();
         $("ul#circle_" + id).transition({ rotate: angleDegres * indexWidth - ( 360 / nombreItems * 2 ) * indexWidth }, 'slow');
         $("ul#circle_" + id + " li").each(function() {
+        	// $(this).stop();
         	$(this).transition({ rotate: -angleDegres * indexWidth + ( 360 / nombreItems * 2 ) * indexWidth }, 0);
         });
 
@@ -284,8 +293,10 @@ $(window).keydown(function(e){
         indexWidth--;
         
 
+        // $("ul#circle_" + id).stop();
         $("ul#circle_" + id).transition({ rotate: angleDegres * indexWidth - ( 360 / nombreItems * 2 ) * indexWidth }, 'slow');
         $("ul#circle_" + id + " li").each(function() {
+        	// $(this).stop();
         	$(this).transition({ rotate: -angleDegres * indexWidth + ( 360 / nombreItems * 2 ) * indexWidth }, 0);
         });
 

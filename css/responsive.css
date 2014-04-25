@@ -1,6 +1,7 @@
 @media screen and (max-width: 1200px) {
 	#repere {
-		width: 50%;
+		width: 60%;
+		left: -70%;
 	}
 	#repere span {
 		font-size: 1.2em;

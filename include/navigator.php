@@ -4,7 +4,7 @@
     <div id="circleMenu">
 
 
-    <div id="repere"><p> <span>Panorama Regular <b class="glyphicon glyphicon-triangle rouge"></b></span></p></div>
+    <div id="repere"><p> <span class="C3G3" style="color:#333;">Panorama Regular <b class="glyphicon glyphicon-triangle rouge"></b></span></p></div>
 
 
 

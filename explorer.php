@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Panorama</title>
+<link rel="icon" type="image/icon" href="https://productiontype.com/web/favicon.ico">
 
 <!--
 <link rel="stylesheet" type="text/css" href="css/url_fonts.php" />
@@ -69,8 +70,8 @@
 <div class="about">
     <div class="panneau gauche BGvert"></div>
     <div class="panneau droite BGvert"></div>
-    <div class="panneau_contenu C4G1 blanc">
-        <p><span class="closeAbout glyphicon glyphicon-cross"></span> </p>
+    <div class="panneau_contenu C4G1 blanc clearfix">
+        <p style="text-align: right;"><span class=" glyphicon glyphicon-cross closeAbout"></span> </p>
         <p>Panorama is not a family, it is a typeface system. It pushes beyond the usual barriers that limit familial proportions, elaborating a core design into an expansive gamut of widths (six) and weights (eight).  The project began in 2003, exploring the malleability of typographic shapes. How far can one stretch a face before it breaks from its basic nature as a quiet, congenial sans? Levée let his imagination (and mechanical automation) wander, interrupting only when necessary to correct a curve or maintain the spirit of the original design. The result is an unusual kit of parts. An arsenal of nearly boundless possibilities, from ethereal thin to blinding black, with an uncommonly handy series of steps in between.</p>
         <p class="credits">Design & code: <a href="https://twitter.com/_____________y" target="_blank">Yannick Mathey</a>.</p>
     </div>

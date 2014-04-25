@@ -1,4 +1,4 @@
-<table id="ui_fonttesteur" style="min-width: 379px;" class="w100" cellspacing="0">
+<table id="ui_fonttesteur"  class="w100" cellspacing="0">
 
 
 <tr>
@@ -30,7 +30,7 @@
 <tr class="btn-2 btn-left btn-color pa0">
 	<td class="n-btn n-txt-center">
 
-	<span id="btn-font" class="btn-color">
+	<span id="btn-font" class="btn-color C3G4 rouge">
 		<span class="action" style="margin-right: 2em">Font color <span class="preview"></span></span>
 		<div id="colorFont" class="define_color toggle">
 		<div id="picker-wrapper-font" class="picker-wrapper">
@@ -71,7 +71,7 @@
 	</div>
 	</span>	
 
-	<span id="btn-fond" class="btn-color">
+	<span id="btn-fond" class="btn-color C3G4 rouge">
 	<span class="action">Background color <span class="preview"></span></span>
 	<div id="colorbackground" class="define_color toggle">
 		<div id="picker-wrapper-fond" class="picker-wrapper">

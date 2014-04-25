@@ -11,8 +11,8 @@
 				<table id="menu2" class="n-wrap-main-menu no-border-top" cellspacing="0">
 					<tr><td class="border-bottom n-txt-center n-btn-blue toggleItalic">Roman <span class="glyphicon glyphicon-double-arrow rouge"></span> Italic</td></tr>
 					<tr>
-						<td class="n-infos">
-							<p><span class="glyphicon glyphicon-triangle"></span>  Type Any letter to preview it</p>
+						<td class="n-infos" style="padding: .5em 1em;">
+							<p><span class="glyphicon glyphicon-triangle"></span>  Type any letter to preview it</p>
 							<p><span class="glyphicon glyphicon-triangle"></span>  Use <span class="glyphicon glyphicon-right-arr"></span> <span class="glyphicon glyphicon-up-arr"></span> <span class="glyphicon glyphicon-right-arr"></span> <span class="glyphicon glyphicon-bottom-arr"></span> to change width/weight</p>
 						</td>
 					</tr>
@@ -34,7 +34,7 @@
 				<tr class="n-main-menu">
 					<td class="n-btn n-btn-green C3G4 n-txt-center openAbout">About</td>
 					<td class="n-btn n-btn-red C3G4 n-txt-center border-left pa0">
-						<a href="https://www.productiontype.com/family/panorama" style="display: block;">
+						<a href="https://productiontype.com/collection/panorama_collection" style="display: block;">
 							Buy
 						</a>
 					</td>

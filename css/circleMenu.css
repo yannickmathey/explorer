@@ -29,8 +29,9 @@ li { text-align:center; line-height:1em; }
 #repere p {
 	text-align:right;
 	float: right;
-	overflow: hidden;
+	overflow: visible;
 	pointer-events: none;
+	letter-spacing: .05em;
 }
 #repere span {
 	vertical-align:middle;

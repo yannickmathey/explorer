@@ -4,6 +4,7 @@
 	<title>Panorama</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo rand(); ?>" />
 	<link rel="stylesheet" type="text/css" href="css/font.css" />
+	<link rel="icon" type="image/icon" href="https://productiontype.com/web/favicon.ico">
 </head>
 <style>* { font-family: "Panorama Bold" ; }</style>
 <body class="home">
