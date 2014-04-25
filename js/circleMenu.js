@@ -165,9 +165,10 @@ function rotation(id, angleDegres, nombreItems) {
 		// console.log("nb li du cercle " + id + " :" + total_li);		
 		var reverse = false;
 		var index = $(this).index();
-		if (id < 2) { index = index -1; }
+		
+		// if (id < 2) { index = index -1; }
 		// Décalage d'un item sur le cercle de graisse :
-		if (id == 2) { index = index +1; } // Pourquoi ?
+		if (id == 0) { index = index -1; } // Pourquoi ?
 		// dunno
 
 		// $("ul#circle_" + id).stop();
