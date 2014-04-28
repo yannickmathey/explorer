@@ -11,7 +11,8 @@
     <div id="testeur" class="noir" spellcheck="false">
         <div class="line clearfix" data-focus="true">
             <div class="options">
-                <div class="btn-tester delete">Remove Line</div>
+                <div class="btn-tester delete" onClick="checkLineLength();">Remove Line</div>
+                <div class="addLine btn-tester" onClick="addline();">Add Line</div>
                
             </div>
             <div    contenteditable="true" 
@@ -22,7 +23,7 @@
                     <span>Panorama Regular</span>
             </div>
         </div>
-        <button id="addLine">Add Line</button>
+        <div id="addLine" style="margin-left:50px;margin-left:30px;" class="addLine btn-tester" onClick="addline();">Add Line</div>
     </div>
 
 

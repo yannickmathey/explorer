@@ -89,7 +89,7 @@ function displayScreen() {
 // toggle italic
 $(document).on("click", ".toggleItalic", function(e) {
 	if (italic) { italic = false } else { italic = true }
-	$("span.conteneur").toggleClass("italic");
+		$("span.conteneur").toggleClass("italic");
 	$("#resultat").toggleClass("italic");
 	var codeFocus = currentWidth+currentThickness;
 	if ( italic ) {
@@ -180,7 +180,7 @@ $(function() {
 		getText( codeFocus );
 
 			//return codeFocus;
-	});
+		});
 
 });
 
@@ -216,20 +216,28 @@ function getText( codeFocus ) {
 
 
 // Ajouter styles dans textarea testeur
-$(function(){
-	$('#testeur').find('#addLine').each(function() {
-		$("#addLine").on('click', function() {
-			var button = $('#addLine');
-			$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
-			//var font = parcourirTableau(codeFocus);
-			var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><div class="btn-tester delete">Remove line</div></div><div contenteditable="true" name="testeurTextarea" title="' + tableau[codeFocus].nom + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
-			$('#testeur').append(newTextarea);
+function addline() {
+	// var button = $('.addLine');
 
-			button.appendTo("#testeur:last-child")
+	$("#testeur").find("[data-focus='true']").attr('data-focus', 'false');
+	//var font = parcourirTableau(codeFocus);
+	var newTextarea = '<div class="line clearfix" data-focus="true"><div class="options"><div class="btn-tester delete" onClick="checkLineLength();">Remove line</div><div class="addLine btn-tester" onClick="addline();">Add Line</div></div><div contenteditable="true" name="testeurTextarea" title="' + tableau[codeFocus].nom + '" class="testeurTextarea ' + codeFocus + '" style="color: ' + fontColor + ';"><span>' + parcourirTableau(codeFocus) + '</span></div></div>'
+	$('#testeur').append(newTextarea);
+	$('#addLine').css('display', 'none');
 
+	// button.appendTo("#testeur:last-child")
+
+}
+
+function checkLineLength() {
+	setTimeout(function() {
+		$('#testeur').each(function(){
+			if($(this).find('div.line').length == 0){
+				$('#addLine').slideDown();
+			}
 		});
-	});
-});
+	}, 1000);
+}
 
 //donner le focus au textarea séléctionné
 $(function(){
@@ -245,7 +253,7 @@ $(document).click(function() {
 });
 
 $('[data-focus=true]').click(function(event) {
-    event.stopPropagation();
+	event.stopPropagation();
 });
 
 
@@ -257,9 +265,9 @@ $(function(){
 		$(this).closest('.line').slideUp('slow', function(){
 			$(this).closest('.line').remove();
 		});
-
-	})
+	});
 });
+
 
 
 // about open
@@ -296,17 +304,17 @@ $(function(){
 			'top': '0',
 			'opacity': '0',
 			'left': '-2000px'
-			},
-			1000, function() {}
+		},
+		1000, function() {}
 		);
 		$(' .droite ').animate({
 			'bottom': '0',
 			'opacity': '0',
 			'right': '-2000px'
-			},
-			1000, function() {
-				$(' .about ').hide();
-			}
+		},
+		1000, function() {
+			$(' .about ').hide();
+		}
 		);
 	})
 });

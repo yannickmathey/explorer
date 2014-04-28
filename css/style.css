@@ -694,7 +694,7 @@ a.famille li:after {
 }
 
 
-#addLine, .btn-tester {
+.addLine, .btn-tester {
     background-color: red;
     padding: 10px 20px;
     border: 0px;
@@ -704,7 +704,7 @@ a.famille li:after {
     margin-left: 50px;
     /* margin-bottom: 500px; */
 }
-#addLine:hover, .btn-tester:hover {
+.addLine:hover, .btn-tester:hover {
     opacity: .9;
 }
 

@@ -118,14 +118,20 @@
 
 .btn-tester {
 	padding-top: 12px;
+	border: 1px solid #dc0a00;
 }
 
 .action {
 	cursor: pointer;
 }
 
+
+#addLine {
+	display: none;
+}
+
 .btn-tester:hover,
-#addLine:hover {
+.addLine:hover {
 	background-color: white;
 	color: #dc0a00;
 	border: 1px solid #dc0a00;
