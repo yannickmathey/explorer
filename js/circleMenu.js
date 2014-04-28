@@ -42,11 +42,6 @@ function tracer(){
 
 	});
 
-	// à supprimer à la fin
-	$("#debug span#codeChasse").append(codeChasse);
-	$("#debug span#codeGraisse").append(codeGraisse);
-	$("#debug span#codeFocus").append(codeFocus);
-	//
 
 	$(function() {
 		var tailleConteneur = $("#circleMenu").width();
@@ -379,8 +374,6 @@ $(function() {
 			$(this).attr("class", codeChasse + sonCode);
 		});
 		//$("#testeur").attr("class", codeFocus );
-		$("#debug span#codeChasse").empty().append(codeChasse);
-		$("#debug span#codeFocus").empty().append(codeFocus);
 		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
 			$('[data-focus=true] [name=addCart]').attr('data-font', codeFocus);
@@ -416,8 +409,6 @@ $(function() {
 			$(this).attr("class", sonCode + codeGraisse );
 		});
 		//$("#testeur").attr("class", codeFocus );
-		$("#debug span#codeGraisse").empty().append(codeGraisse);
-		$("#debug span#codeFocus").empty().append(codeFocus);
 		$('[data-focus=true] > [name=testeurTextarea]').removeAttr('class');
 			$('[data-focus=true] > [name=testeurTextarea]').addClass('testeurTextarea ' + codeFocus);
 			$('[data-focus=true] [name=addCart]').attr('data-font', codeFocus);

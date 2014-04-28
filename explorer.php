@@ -4,28 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Panorama</title>
 <link rel="icon" type="image/icon" href="https://productiontype.com/web/favicon.ico">
-
-<!--
-<link rel="stylesheet" type="text/css" href="css/url_fonts.php" />
-<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo rand(); ?>" />
-<link rel="stylesheet" type="text/css" href="css/circleMenu.css?v=<?php echo rand(); ?>" />
-<link rel="stylesheet" type="text/css" href="css/font.css" />
-<link rel="stylesheet" type="text/css" href="css/italic.css" />
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" href="css/responsive.css?v=<?php echo rand(); ?>" />
-<link rel="stylesheet" type="text/css" href="css/new.css?v=<?php echo rand(); ?>" />
--->
 <link rel="stylesheet" type="text/css" href="src/style-min.css?v=<?php echo rand(); ?>" />
-
-<!--
-<script src="js/tableau.js?v=<?php echo rand(); ?>"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-<script src="js/circleMenu.js?v=<?php echo rand(); ?>"></script>
-<script src="js/interface.js?v=<?php echo rand(); ?>"></script>
-<script src="js/jquery.transit.min.js"></script>
-<script type="text/javascript" src="js/colorpicker.min.js"></script>
--->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 <script src="src/script.min.js?v=<?php echo rand(); ?>"></script>
@@ -46,22 +25,12 @@
 <div id="wrap">
 
 <?php
-    // include 'include/menu.php';
     include 'include/newMenu.php';
     include 'include/navigator.php';
     include 'include/liveTest.php';
 ?>
 
 </div><!-- END #wrap -->
-
-<div id="debug">
-    <p>chasse: <span id="codeChasse"></span></p>
-    <p>graisse: <span id="codeGraisse"></span></p>
-    <p>focus: <span id="codeFocus"></span></p>
-    <p>mouse: <span id="mouse"></span></p>
-    <p>centre: <span id="centre"></span></p>
-    <p>hover: <span id="elementHover"></span></p>
-</div>
 
 
 <div id="javascriptKo">Warning :<br/> Javascript seems disabled on your browser.<br/>Please enable it.</div>
