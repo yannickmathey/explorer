@@ -109,8 +109,8 @@
 	display: none;
 	position: absolute;
 	z-index: 1000;
-	top: 50px; 
-	margin-top: -33px;
+	top: 50%; 
+	margin-top: -19px;
 	right:-1000px;
 	transition: all 500ms;
 	-webkit-transition: all 500ms; /* Safari */

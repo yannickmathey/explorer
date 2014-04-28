@@ -32,7 +32,7 @@
 
 			<table class="n-wrap-main-menu border-top" cellspacing="0">
 				<tr class="n-main-menu">
-					<td class="n-btn n-btn-green C3G4 n-txt-center openAbout">About</td>
+					<td class="n-btn n-btn-green C3G4 n-txt-center openAbout" onClick="openAbout()">About</td>
 					<td class="n-btn n-btn-red C3G4 n-txt-center border-left pa0">
 						<a href="https://productiontype.com/collection/panorama_collection" style="display: block;">
 							Buy

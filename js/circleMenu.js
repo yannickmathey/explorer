@@ -315,7 +315,7 @@ $(window).keydown(function(e){
 
 
 // si aucune activité
-var IDLE_TIMEOUT = 30; //seconds
+var IDLE_TIMEOUT = 12; //seconds
 var _idleSecondsCounter = 0;
 document.onclick = function() {
     _idleSecondsCounter = 0;
@@ -326,7 +326,7 @@ document.onmousemove = function() {
 document.onkeypress = function() {
     _idleSecondsCounter = 0;
 };
-window.setInterval(CheckIdleTime, 3000);
+window.setInterval(CheckIdleTime, 2200);
 
 function CheckIdleTime() {
     _idleSecondsCounter++;
